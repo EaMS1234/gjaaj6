@@ -2,9 +2,9 @@
 
 extends Area2D
 
-export var velo = 150  # Velocidade
+export var velo = 150  # Velocidade (pixel/sec)
 
-var mov = Vector2()
+var mov = Vector2()  # Movimento 2D
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_down"):
@@ -27,4 +27,5 @@ func _physics_process(delta):
 		mov = mov.normalized() * velo
 	
 	self.position += mov * delta
+	
 	mov = mov * 0  # Jogador para quando nao esta recebendo nenhuma força
