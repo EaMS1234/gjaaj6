@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/graphics/icon_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/graphics/icon_2.png" type="Texture" id=2]
-[ext_resource path="res://cenas/butao.gd" type="Script" id=3]
+[ext_resource path="res://scripts/butao.gd" type="Script" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
