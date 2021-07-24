@@ -12,3 +12,6 @@ frames = ExtResource( 1 )
 
 [node name="player_collision" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
+
+[connection signal="area_entered" from="." to="." method="_on_player_area_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_player_area_area_exited"]
