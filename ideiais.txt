@@ -3,7 +3,19 @@ Movimento: 8 direções, visão de cima
 Interações:
 	- Apertar botões
 	- Viajar no tempo (livremente)
-	- Mover obnjetos
+	- Mover objetos
+	- Utilizar itens
 
+Fases:
+	- Primeira fase vc é ajudado por você mesmo no futuro
+	- Cada sala tem 3 variações (PA - PRE - FU)
+	- Última fase é você ajudando-se a si mesmo no passado
+	- Pa pre fu - Muda o esstilo dos gráficos
+	
+	PAssado (GRÁFICOS GAMEBOY)
+	PREsente (GRÁFICOS SUPER NINTENDO)
+	FUturo (GRÁFICOS VETOR)
 
-
+História:
+	- A gente já sabe que o futuro aconteceu, mas precisamos fazer para
+	  manter o ciclo operando
