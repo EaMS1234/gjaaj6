@@ -10,9 +10,14 @@ config_version=4
 
 [application]
 
-config/name="gjaaj6"
+config/name="PAPREFU"
+config/description="Jogo feito para a GAME JAAJ 6, de tema CICLOS."
 run/main_scene="res://cenas/main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/resizable=false
 
 [physics]
 
