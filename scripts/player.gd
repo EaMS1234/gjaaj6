@@ -71,4 +71,3 @@ func _on_player_area_area_exited(area):  # SAIU
 	
 	if area in get_tree().get_nodes_in_group("__botao"):
 		botao = false
-		

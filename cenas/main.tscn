@@ -16,5 +16,9 @@ position = Vector2( 334.167, 202.165 )
 position = Vector2( 679.038, 200.976 )
 
 [node name="botao_area" parent="." instance=ExtResource( 3 )]
-position = Vector2( 526.298, 499.246 )
+position = Vector2( 860.008, 501.915 )
+max_click = 10
+
+[node name="botao_area2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 130.814, 537.94 )
 max_click = 10
