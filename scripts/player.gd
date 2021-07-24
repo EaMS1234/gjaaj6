@@ -7,6 +7,7 @@ const spawn_caixa = preload("res://cenas/caixa.tscn")
 export var velo = 150  # Velocidade (pixel/sec)
 
 var ready_caixa
+var ready_botao
 var mov = Vector2()  # Movimento 2D
 var caixa = false
 var botao = false
@@ -44,6 +45,8 @@ func _physics_process(delta):
 		
 		elif botao == true and pegou == false:
 			print("APERTOU BOTAO")
+			
+			ready_botao.get_child(0).animation = "pressed"
 
 	if mov.length() >= velo:
 		# Impede de se mover mais rapido que a velocidade estabelecida
@@ -64,6 +67,8 @@ func _on_player_area_area_entered(area):  # ENTROU
 
 	if area in get_tree().get_nodes_in_group("__botao"):
 		botao = true
+		
+		ready_botao = area
 
 func _on_player_area_area_exited(area):  # SAIU
 	if area in get_tree().get_nodes_in_group("__obj"):
