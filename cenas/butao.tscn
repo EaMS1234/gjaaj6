@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/graphics/icon_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/graphics/icon_2.png" type="Texture" id=2]
+[ext_resource path="res://cenas/butao.gd" type="Script" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -21,9 +22,13 @@ animations = [ {
 "__obj",
 ]]
 z_index = -2
+script = ExtResource( 3 )
 
 [node name="botao_sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="botao_collision" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
+
+[connection signal="area_entered" from="." to="." method="_on_botao_area_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_botao_area_area_exited"]

@@ -7,7 +7,6 @@ const spawn_caixa = preload("res://cenas/caixa.tscn")
 export var velo = 150  # Velocidade (pixel/sec)
 
 var ready_caixa
-var ready_botao
 var mov = Vector2()  # Movimento 2D
 var caixa = false
 var botao = false
@@ -34,7 +33,7 @@ func _physics_process(delta):
 			
 			ready_caixa.queue_free()  # Apaga a caixa da memoria
 		
-		elif caixa == false and pegou == true:
+		elif caixa == false and botao == false and pegou == true:
 			pegou = false
 			
 			$player_sprite.animation = "default"
@@ -42,11 +41,6 @@ func _physics_process(delta):
 			var __nova_caixa = spawn_caixa.instance()  # Instancia a caixa para ser adicionada posteriormente
 			__nova_caixa.position = self.position  # Posiçao da caixa e a mesma do player
 			get_parent().add_child(__nova_caixa)  # Spawna uma nova caixa
-		
-		elif botao == true and pegou == false:
-			print("APERTOU BOTAO")
-			
-			ready_botao.get_child(0).animation = "pressed"
 
 	if mov.length() >= velo:
 		# Impede de se mover mais rapido que a velocidade estabelecida
@@ -58,24 +52,23 @@ func _physics_process(delta):
 	
 func _on_player_area_area_entered(area):  # ENTROU
 	if area in get_tree().get_nodes_in_group("__obj"):
-		print("OBJ :)")
+		pass  # SUBSTITUIR
 	
 	if area in get_tree().get_nodes_in_group("__caixa"):
 		caixa = true
 		
 		ready_caixa = area
-
+	
 	if area in get_tree().get_nodes_in_group("__botao"):
 		botao = true
 		
-		ready_botao = area
-
 func _on_player_area_area_exited(area):  # SAIU
 	if area in get_tree().get_nodes_in_group("__obj"):
-		print("OBJ :(")
+		pass  # SUBSTITUIR
 		
 	if area in get_tree().get_nodes_in_group("__caixa"):
 		caixa = false
 	
 	if area in get_tree().get_nodes_in_group("__botao"):
 		botao = false
+		
