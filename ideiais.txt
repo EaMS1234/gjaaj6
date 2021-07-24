@@ -1,0 +1,9 @@
+Movimento: 8 direções, visão de cima
+
+Interações:
+	- Apertar botões
+	- Viajar no tempo (livremente)
+	- Mover obnjetos
+
+
+
