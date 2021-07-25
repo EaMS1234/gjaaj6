@@ -11,36 +11,38 @@ var mov = Vector2()  # Movimento 2D
 var caixa = false
 var botao = false
 var pegou = false
+var movable = true  # Jogador e movimentavel?
 
 func _physics_process(delta):
-	if Input.is_action_pressed("ui_down"):
-		mov.y += velo
-	
-	if Input.is_action_pressed("ui_up"):
-		mov.y -= velo
-	
-	if Input.is_action_pressed("ui_left"):
-		mov.x -= velo
-	
-	if Input.is_action_pressed("ui_right"):
-		mov.x += velo
-	
-	if Input.is_action_just_pressed("ui_accept"):
-		if caixa == true and pegou == false:
-			pegou = true
-			
-			$player_sprite.animation = "carregando"
-			
-			ready_caixa.queue_free()  # Apaga a caixa da memoria
+	if movable:
+		if Input.is_action_pressed("ui_down"):
+			mov.y += velo
 		
-		elif caixa == false and botao == false and pegou == true:
-			pegou = false
+		if Input.is_action_pressed("ui_up"):
+			mov.y -= velo
+		
+		if Input.is_action_pressed("ui_left"):
+			mov.x -= velo
+		
+		if Input.is_action_pressed("ui_right"):
+			mov.x += velo
+		
+		if Input.is_action_just_pressed("ui_accept"):
+			if caixa == true and pegou == false:
+				pegou = true
+				
+				$player_sprite.animation = "carregando"
+				
+				ready_caixa.queue_free()  # Apaga a caixa da memoria
 			
-			$player_sprite.animation = "default"
-			
-			var __nova_caixa = spawn_caixa.instance()  # Instancia a caixa para ser adicionada posteriormente
-			__nova_caixa.position = self.position  # Posiçao da caixa e a mesma do player
-			get_parent().add_child(__nova_caixa)  # Spawna uma nova caixa
+			elif caixa == false and botao == false and pegou == true:
+				pegou = false
+				
+				$player_sprite.animation = "default"
+				
+				var __nova_caixa = spawn_caixa.instance()  # Instancia a caixa para ser adicionada posteriormente
+				__nova_caixa.position = self.position  # Posiçao da caixa e a mesma do player
+				get_parent().add_child(__nova_caixa)  # Spawna uma nova caixa
 
 	if mov.length() >= velo:
 		# Impede de se mover mais rapido que a velocidade estabelecida

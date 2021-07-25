@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://cenas/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://cenas/caixa.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cenas/butao.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/main.gd" type="Script" id=4]
 
 [node name="main" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="player_area" parent="." instance=ExtResource( 1 )]
 position = Vector2( 497.438, 292.17 )
@@ -20,5 +22,7 @@ position = Vector2( 860.008, 501.915 )
 max_click = 10
 
 [node name="botao_area2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 130.814, 537.94 )
+position = Vector2( 457.819, 388.724 )
 max_click = 10
+
+[connection signal="click" from="botao_area2" to="." method="_on_botao_area2_click"]
