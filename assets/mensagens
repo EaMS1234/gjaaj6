@@ -1,0 +1,15 @@
+# Linhas que iniciam com "#" ou em branco serão ignoradas.
+# Formato aceitado: X.Y
+#
+# NÃO UTILIZE "\n" OU ";" NAS MENSAGENS!
+#
+# X -> Número da fase
+# Y -> Ordem do texto (Ex: 0 é o primeiro texto. Ex: 1 é o segundo texto)
+#
+# Exemplos:
+# 1.0; Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+# 1.1; Vivamus non dolor et tellus rhoncus vulputate.
+
+0.0; texto texto texto texto texto
+0.1; otxet otxet otxet otxet otxet
+0.1; 1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890 TESTE
