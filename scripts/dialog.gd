@@ -1,11 +1,9 @@
 extends Polygon2D
 
 export var caminho = "res://assets/mensagens"  # Diretrio dos arquivos de mensagem
-export var fase = 0  # Fase a ser lida
-export var ordem = 1  # Ordem a ser lida
 export var limite = 183  # Limite de caracteres
 
-var txt_pos = "%s.%s" % [fase, ordem]
+var txt_pos = "0.0"
 var lines = []
 var x = 0
 
@@ -42,6 +40,8 @@ func ler(separator=";"):
 		
 		# Reconhece a linha como invalida
 		if line.count("#") > 0 or line == " " or line == "\n" or not txt_pos in line:
+			print(txt_pos)
+			print(txt_pos in line)
 			pass
 		
 		# Se valida

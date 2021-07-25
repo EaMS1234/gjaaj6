@@ -8,7 +8,6 @@ const txt = preload("res://cenas/dialog.tscn")
 func _on_botao_area2_click():
 	var dia = txt.instance()
 	
-	dia.fase = 0
-	dia.ordem = 1
+	dia.txt_pos = "0.2"
 	
 	add_child(dia)
