@@ -11,10 +11,7 @@ func _ready():
 		node.movable = false  # Bloqueia as açoes do jogador
 
 func _physics_process(delta):
-	if x >= len(lines):
-		for node in get_tree().get_nodes_in_group("__botao"):
-			node.clickable = true  # Libera o click de todos os botoes
-		
+	if x >= len(lines):		
 		for node in get_tree().get_nodes_in_group("__player"):
 			node.movable = true  # Libera as açoes do jogador
 		
