@@ -14,15 +14,15 @@
 
 [resource]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "c_frente",
-"speed": 7.5
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "a_cima",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "c_frente",
+"speed": 7.5
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 1 ), ExtResource( 6 ) ],
 "loop": true,
