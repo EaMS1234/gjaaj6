@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=12 format=2]
+[gd_resource type="SpriteFrames" load_steps=17 format=2]
 
 [ext_resource path="res://assets/graphics/Personage/persofrente_0.png" type="Texture" id=1]
+[ext_resource path="res://assets/graphics/Personage/Personagecaixa/Pertrascaixa2.png" type="Texture" id=2]
 [ext_resource path="res://assets/graphics/Personage/perlado_0.png" type="Texture" id=3]
 [ext_resource path="res://assets/graphics/Personage/percostas_0.png" type="Texture" id=4]
 [ext_resource path="res://assets/graphics/Personage/percostasanda_0.png" type="Texture" id=5]
@@ -11,6 +12,10 @@
 [ext_resource path="res://assets/graphics/Personage/Personagecaixa/Perfrentecaixa1.png" type="Texture" id=10]
 [ext_resource path="res://assets/graphics/Personage/Personagecaixa/Perfrentecaixa3.png" type="Texture" id=11]
 [ext_resource path="res://assets/graphics/Personage/Personagecaixa/Perfrentecaixa2.png" type="Texture" id=12]
+[ext_resource path="res://assets/graphics/Personage/Personagecaixa/Pertrascaixa1.png" type="Texture" id=13]
+[ext_resource path="res://assets/graphics/Personage/Personagecaixa/Pertrascaixa3.png" type="Texture" id=14]
+[ext_resource path="res://assets/graphics/Personage/Personagecaixa/Perladocaixa2.png" type="Texture" id=15]
+[ext_resource path="res://assets/graphics/Personage/Personagecaixa/Perladocaixa1.png" type="Texture" id=16]
 
 [resource]
 animations = [ {
@@ -33,4 +38,14 @@ animations = [ {
 "loop": true,
 "name": "a_lado",
 "speed": 7.5
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "c_lado",
+"speed": 7.5
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "c_cima",
+"speed": 10.0
 } ]

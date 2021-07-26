@@ -22,6 +22,9 @@ func _physics_process(delta):
 			if pegou == false:
 				$player_sprite.animation = "a_frente"
 			
+			else:
+				$player_sprite.animation = "c_frente"
+			
 			$player_sprite.play()
 		
 		elif Input.is_action_pressed("ui_up"):
@@ -30,23 +33,34 @@ func _physics_process(delta):
 			if pegou == false:
 				$player_sprite.animation = "a_cima"
 			
+			else:
+				$player_sprite.animation = "c_cima"
+			
 			$player_sprite.play()
 		
 		elif Input.is_action_pressed("ui_left"):
 			mov.x -= velo
 			
+			$player_sprite.flip_h = true
+			
 			if pegou == false:
-				$player_sprite.flip_h = true
 				$player_sprite.animation = "a_lado"
+			
+			else:
+				$player_sprite.animation = "c_lado"
 			
 			$player_sprite.play()
 		
 		elif Input.is_action_pressed("ui_right"):
 			mov.x += velo
 			
+			$player_sprite.flip_h = false
+			
 			if pegou == false:
-				$player_sprite.flip_h = false
 				$player_sprite.animation = "a_lado"
+			
+			else:
+				$player_sprite.animation = "c_lado"
 			
 			$player_sprite.play()
 		

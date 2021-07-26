@@ -1,7 +1,7 @@
 extends AnimatedSprite
 
 func _physics_process(delta):
-	if self.animation == "c_frente":
+	if "c_" in self.animation:
 		self.offset.y = -80
 	
 	else:
