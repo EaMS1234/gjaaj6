@@ -17,28 +17,38 @@ func _physics_process(delta):
 	if movable:
 		if Input.is_action_pressed("ui_down"):
 			mov.y += velo
+			
+			$player_sprite.animation = "a_frente"
+			$player_sprite.play()
 		
 		if Input.is_action_pressed("ui_up"):
 			mov.y -= velo
+			
+			$player_sprite.animation = "a_cima"
+			$player_sprite.play()
 		
 		if Input.is_action_pressed("ui_left"):
 			mov.x -= velo
+			
+			$player_sprite.scale.x = -0.5
+			$player_sprite.animation = "a_lado"
+			$player_sprite.play()
 		
 		if Input.is_action_pressed("ui_right"):
 			mov.x += velo
+			
+			$player_sprite.scale.x = 0.5
+			$player_sprite.animation = "a_lado"
+			$player_sprite.play()
 		
 		if Input.is_action_just_pressed("ui_accept"):
 			if caixa == true and pegou == false:
 				pegou = true
 				
-				$player_sprite.animation = "carregando"
-				
 				ready_caixa.queue_free()  # Apaga a caixa da memoria
 			
 			elif caixa == false and botao == false and pegou == true:
 				pegou = false
-				
-				$player_sprite.animation = "default"
 				
 				var __nova_caixa = spawn_caixa.instance()  # Instancia a caixa para ser adicionada posteriormente
 				__nova_caixa.position = self.position  # Posiçao da caixa e a mesma do player
@@ -47,6 +57,10 @@ func _physics_process(delta):
 	if mov.length() >= velo:
 		# Impede de se mover mais rapido que a velocidade estabelecida
 		mov = mov.normalized() * velo
+	
+	if mov.length() == 0:
+		$player_sprite.frame = 1
+		$player_sprite.stop()
 	
 	self.position += mov * delta
 	

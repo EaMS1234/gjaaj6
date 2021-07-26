@@ -10,10 +10,12 @@ script = ExtResource( 2 )
 velo = 200
 
 [node name="player_sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 1 )
+animation = "a_frente"
 
 [node name="player_collision" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
+polygon = PoolVector2Array( -8, -24, -24, -16, -24, 32, -16, 40, 16, 40, 24, 32, 24, -16, 8, -24 )
 
 [connection signal="area_entered" from="." to="." method="_on_player_area_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_player_area_area_exited"]
