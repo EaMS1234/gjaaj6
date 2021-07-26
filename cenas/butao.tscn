@@ -7,6 +7,7 @@
 "__botao",
 "__obj",
 ]]
+scale = Vector2( 0.75, 0.75 )
 z_index = -2
 script = ExtResource( 3 )
 

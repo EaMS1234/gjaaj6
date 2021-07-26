@@ -6,6 +6,7 @@
 "__caixa",
 "__obj",
 ]]
+scale = Vector2( 0.75, 0.75 )
 z_index = -1
 
 [node name="caixa_sprite" type="Sprite" parent="."]
