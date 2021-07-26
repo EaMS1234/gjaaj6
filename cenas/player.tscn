@@ -22,7 +22,7 @@ animation = "reverso"
 [node name="player_sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 frames = ExtResource( 1 )
-animation = "c_frente"
+animation = "a_cima"
 script = ExtResource( 4 )
 
 [node name="player_collision" type="CollisionPolygon2D" parent="."]
