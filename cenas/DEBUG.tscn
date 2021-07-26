@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://cenas/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://cenas/caixa.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cenas/butao.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/DEBUG.gd" type="Script" id=4]
 [ext_resource path="res://cenas/pplaca.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/Sprite.gd" type="Script" id=6]
+[ext_resource path="res://assets/graphics/icon_1.png" type="Texture" id=7]
+[ext_resource path="res://scripts/Sprite2.gd" type="Script" id=8]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 4 )
@@ -24,9 +27,22 @@ max_click = 10
 
 [node name="botao_area2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 457.819, 388.724 )
-max_click = 10
+max_click = 99999
 
 [node name="pplaca_area" parent="." instance=ExtResource( 5 )]
 position = Vector2( 292.963, 358.065 )
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 200, 400 )
+texture = ExtResource( 7 )
+script = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 900, 400 )
+texture = ExtResource( 7 )
+script = ExtResource( 8 )
+
+[connection signal="click" from="botao_area" to="Sprite2" method="_on_botao_area_click"]
 [connection signal="click" from="botao_area2" to="." method="_on_botao_area2_click"]
+[connection signal="press" from="pplaca_area" to="Sprite" method="_on_pplaca_area_press"]
+[connection signal="unpress" from="pplaca_area" to="Sprite" method="_on_pplaca_area_unpress"]
