@@ -22,7 +22,7 @@ animations = [ {
 "frames": [ ExtResource( 12 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "c_frente",
-"speed": 7.5
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 1 ), ExtResource( 6 ) ],
 "loop": true,
