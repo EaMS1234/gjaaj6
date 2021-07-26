@@ -40,8 +40,6 @@ func ler(separator=";"):
 		
 		# Reconhece a linha como invalida
 		if line.count("#") > 0 or line == " " or line == "\n" or not txt_pos in line:
-			print(txt_pos)
-			print(txt_pos in line)
 			pass
 		
 		# Se valida
