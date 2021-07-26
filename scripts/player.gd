@@ -22,20 +22,20 @@ func _physics_process(delta):
 			$player_sprite.animation = "a_frente"
 			$player_sprite.play()
 		
-		if Input.is_action_pressed("ui_up"):
+		elif Input.is_action_pressed("ui_up"):
 			mov.y -= velo
 			
 			$player_sprite.animation = "a_cima"
 			$player_sprite.play()
 		
-		if Input.is_action_pressed("ui_left"):
+		elif Input.is_action_pressed("ui_left"):
 			mov.x -= velo
 			
 			$player_sprite.flip_h = true
 			$player_sprite.animation = "a_lado"
 			$player_sprite.play()
 		
-		if Input.is_action_pressed("ui_right"):
+		elif Input.is_action_pressed("ui_right"):
 			mov.x += velo
 			
 			$player_sprite.flip_h = false
