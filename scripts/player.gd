@@ -15,6 +15,9 @@ var obj = false
 var movable = true  # Jogador e movimentavel?
 
 func _physics_process(delta):
+	if Input.is_action_just_released("toggle_fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
+	
 	if movable:
 		if Input.is_action_pressed("ui_down"):
 			mov.y += velo
