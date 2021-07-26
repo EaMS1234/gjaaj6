@@ -12,6 +12,7 @@ font_data = ExtResource( 2 )
 
 [node name="dialog_bg" type="Polygon2D"]
 position = Vector2( 136, 568 )
+z_index = 20
 color = Color( 0, 0, 0, 0.498039 )
 polygon = PoolVector2Array( -72, -504, 824, -504, 824, -376, -72, -376 )
 script = ExtResource( 1 )

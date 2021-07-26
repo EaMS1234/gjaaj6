@@ -19,37 +19,51 @@ func _physics_process(delta):
 		if Input.is_action_pressed("ui_down"):
 			mov.y += velo
 			
-			$player_sprite.animation = "a_frente"
+			if pegou == false:
+				$player_sprite.animation = "a_frente"
+			
 			$player_sprite.play()
 		
 		elif Input.is_action_pressed("ui_up"):
 			mov.y -= velo
 			
-			$player_sprite.animation = "a_cima"
+			if pegou == false:
+				$player_sprite.animation = "a_cima"
+			
 			$player_sprite.play()
 		
 		elif Input.is_action_pressed("ui_left"):
 			mov.x -= velo
 			
-			$player_sprite.flip_h = true
-			$player_sprite.animation = "a_lado"
+			if pegou == false:
+				$player_sprite.flip_h = true
+				$player_sprite.animation = "a_lado"
+			
 			$player_sprite.play()
 		
 		elif Input.is_action_pressed("ui_right"):
 			mov.x += velo
 			
-			$player_sprite.flip_h = false
-			$player_sprite.animation = "a_lado"
+			if pegou == false:
+				$player_sprite.flip_h = false
+				$player_sprite.animation = "a_lado"
+			
 			$player_sprite.play()
 		
 		if Input.is_action_just_pressed("ui_accept"):
 			if caixa == true and pegou == false:
 				pegou = true
 				
+				$player_sprite.animation = "c_frente"
+				$player_sprite.play()
+				
 				ready_caixa.queue_free()  # Apaga a caixa da memoria
 			
 			elif caixa == false and botao == false and pegou == true:
 				pegou = false
+				
+				$player_sprite.animation = "a_frente"
+				$player_sprite.play()
 				
 				var __nova_caixa = spawn_caixa.instance()  # Instancia a caixa para ser adicionada posteriormente
 				__nova_caixa.position = self.position  # Posiçao da caixa e a mesma do player
