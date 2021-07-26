@@ -1,13 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/graphics/animations/player_sprite.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scripts/player.gd" type="Script" id=2]
+[ext_resource path="res://assets/graphics/animations/bolha.tres" type="SpriteFrames" id=3]
 
 [node name="player_area" type="Area2D" groups=[
 "__player",
 ]]
 script = ExtResource( 2 )
 velo = 200
+
+[node name="bolha" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 0, -56 )
+scale = Vector2( 0.375, 0.375 )
+z_index = 10
+frames = ExtResource( 3 )
+animation = "reverso"
 
 [node name="player_sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )

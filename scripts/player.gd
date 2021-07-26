@@ -11,6 +11,7 @@ var mov = Vector2()  # Movimento 2D
 var caixa = false
 var botao = false
 var pegou = false
+var obj = false
 var movable = true  # Jogador e movimentavel?
 
 func _physics_process(delta):
@@ -30,14 +31,14 @@ func _physics_process(delta):
 		if Input.is_action_pressed("ui_left"):
 			mov.x -= velo
 			
-			$player_sprite.scale.x = -0.5
+			$player_sprite.flip_h = true
 			$player_sprite.animation = "a_lado"
 			$player_sprite.play()
 		
 		if Input.is_action_pressed("ui_right"):
 			mov.x += velo
 			
-			$player_sprite.scale.x = 0.5
+			$player_sprite.flip_h = false
 			$player_sprite.animation = "a_lado"
 			$player_sprite.play()
 		
@@ -62,13 +63,24 @@ func _physics_process(delta):
 		$player_sprite.frame = 1
 		$player_sprite.stop()
 	
+	if $bolha.frame == 16:
+		if obj == false:
+			$bolha.visible = false
+		
+		else:
+			$bolha.stop()
+	
 	self.position += mov * delta
 	
 	mov = mov * 0  # Jogador para quando nao esta recebendo nenhuma força
 	
 func _on_player_area_area_entered(area):  # ENTROU
 	if area in get_tree().get_nodes_in_group("__obj"):
-		pass  # SUBSTITUIR
+		$bolha.visible = true
+		$bolha.animation = "default"
+		$bolha.play()
+		
+		obj = true
 	
 	if area in get_tree().get_nodes_in_group("__caixa"):
 		caixa = true
@@ -80,8 +92,12 @@ func _on_player_area_area_entered(area):  # ENTROU
 		
 func _on_player_area_area_exited(area):  # SAIU
 	if area in get_tree().get_nodes_in_group("__obj"):
-		pass  # SUBSTITUIR
+		$bolha.visible = true
+		$bolha.animation = "reverso"
+		$bolha.play()
 		
+		obj = false
+
 	if area in get_tree().get_nodes_in_group("__caixa"):
 		caixa = false
 	
