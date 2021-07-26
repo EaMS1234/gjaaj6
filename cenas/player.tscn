@@ -26,7 +26,7 @@ animation = "a_cima"
 script = ExtResource( 4 )
 
 [node name="player_collision" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -8, -24, -24, -16, -24, 32, -16, 40, 16, 40, 24, 32, 24, -16, 8, -24 )
+polygon = PoolVector2Array( -16, -40, -32, -16, -32, 32, -16, 48, 16, 48, 32, 32, 32, -16, 16, -40 )
 
 [connection signal="area_entered" from="." to="." method="_on_player_area_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_player_area_area_exited"]
