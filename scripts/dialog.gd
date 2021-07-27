@@ -27,6 +27,9 @@ func _physics_process(delta):
 		$texto.text = lines[x]
 		
 		if Input.is_action_just_pressed("ui_accept"):
+			$texto.hide()
+			$texto.show()
+			
 			x += 1
 
 func ler(separator=";"):
