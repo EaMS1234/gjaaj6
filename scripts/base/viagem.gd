@@ -31,19 +31,19 @@ func _physics_process(delta):
 			cursor += 1
 	
 	if cursor == 0:
-		$pa.offset.y = -25
+		$pa.offset.y = -60
 		$pre.offset.y = 0
 		$fu.offset.y = 0
 	
 	elif cursor == 1:
 		$pa.offset.y = 0
-		$pre.offset.y = -25
+		$pre.offset.y = -60
 		$fu.offset.y = 0
 	
 	elif cursor == 2:
 		$pa.offset.y = 0
 		$pre.offset.y = 0
-		$fu.offset.y = -25
+		$fu.offset.y = -60
 
 func _viagem():
 	if get_parent().tempo == cursor:
