@@ -1,15 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/dialog.gd" type="Script" id=1]
-[ext_resource path="res://assets/graphics/fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://cenas/texto.gd" type="Script" id=3]
-
-[sub_resource type="DynamicFont" id=1]
-size = 24
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-use_mipmaps = true
-font_data = ExtResource( 2 )
+[ext_resource path="res://assets/graphics/fonts/dialog.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/texto.gd" type="Script" id=3]
 
 [node name="dialog_bg" type="Polygon2D"]
 position = Vector2( 136, 568 )
@@ -24,7 +17,7 @@ margin_top = -488.0
 margin_right = 808.0
 margin_bottom = -408.0
 size_flags_vertical = 5
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "TESTE"
 autowrap = true
 script = ExtResource( 3 )

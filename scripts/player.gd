@@ -3,6 +3,7 @@
 extends Area2D
 
 const spawn_caixa = preload("res://cenas/caixa.tscn")
+const viagem = preload("res://cenas/viagem.tscn")
 
 export var velo = 150  # Velocidade (pixel/sec)
 
@@ -85,7 +86,12 @@ func _physics_process(delta):
 				var __nova_caixa = spawn_caixa.instance()  # Instancia a caixa para ser adicionada posteriormente
 				__nova_caixa.position = self.position  # Posiçao da caixa e a mesma do player
 				get_parent().add_child(__nova_caixa)  # Spawna uma nova caixa
-
+		
+		elif Input.is_action_just_pressed("viagem"):
+			var spawn_viagem = viagem.instance()
+			
+			self.get_parent().add_child(spawn_viagem)
+		
 	if mov.length() >= velo:
 		# Impede de se mover mais rapido que a velocidade estabelecida
 		mov = mov.normalized() * velo
