@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/salaprincipal.png" type="Texture" id=1]
 [ext_resource path="res://assets/graphics/icon_1.png" type="Texture" id=2]
 [ext_resource path="res://scripts/DEBUG/DEBUG.gd" type="Script" id=3]
 [ext_resource path="res://scripts/DEBUG/Sprite.gd" type="Script" id=4]
@@ -9,7 +10,17 @@
 [ext_resource path="res://cenas/base/player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/graphics/fonts/dialog.tres" type="DynamicFont" id=9]
 
-[node name="main" type="Node2D"]
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="DEBUG" type="Node2D" groups=[
+"__sala",
+]]
 script = ExtResource( 3 )
 
 [node name="player_area" parent="." instance=ExtResource( 8 )]
@@ -43,6 +54,12 @@ custom_fonts/font = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="bg" type="AnimatedSprite" parent="."]
+position = Vector2( 512, 300.5 )
+scale = Vector2( 1.96545, 2 )
+z_index = -100
+frames = SubResource( 1 )
 
 [connection signal="click" from="botao_area" to="Sprite2" method="_on_botao_area_click"]
 [connection signal="click" from="botao_area2" to="." method="_on_botao_area2_click"]

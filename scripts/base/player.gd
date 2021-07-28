@@ -31,7 +31,11 @@ func _physics_process(delta):
 				$player_sprite.animation = "a_frente"
 			
 			else:
-				$player_sprite.animation = "c_frente"
+				if get_parent().tempo == 1:
+					$player_sprite.animation = "c_frente"
+				
+				else:
+					$player_sprite.animation = "c_frente_p"
 			
 			$player_sprite.play()
 		
@@ -42,7 +46,11 @@ func _physics_process(delta):
 				$player_sprite.animation = "a_cima"
 			
 			else:
-				$player_sprite.animation = "c_cima"
+				if get_parent().tempo == 1:
+					$player_sprite.animation = "c_cima"
+				
+				else:
+					$player_sprite.animation = "c_cima_p"
 			
 			$player_sprite.play()
 		
@@ -55,7 +63,11 @@ func _physics_process(delta):
 				$player_sprite.animation = "a_lado"
 			
 			else:
-				$player_sprite.animation = "c_lado"
+				if get_parent().tempo == 1:
+					$player_sprite.animation = "c_lado"
+				
+				else:
+					$player_sprite.animation = "c_lado_p"
 			
 			$player_sprite.play()
 		
@@ -68,7 +80,11 @@ func _physics_process(delta):
 				$player_sprite.animation = "a_lado"
 			
 			else:
-				$player_sprite.animation = "c_lado"
+				if get_parent().tempo == 1:
+					$player_sprite.animation = "c_lado"
+				
+				else:
+					$player_sprite.animation = "c_lado_p"
 			
 			$player_sprite.play()
 		
@@ -76,7 +92,12 @@ func _physics_process(delta):
 			if caixa == true and pegou == false:
 				pegou = true
 				
-				$player_sprite.animation = "c_frente"
+				if get_parent().tempo == 1:
+					$player_sprite.animation = "c_frente"
+				
+				else:
+					$player_sprite.animation = "c_frente_p"
+				
 				$player_sprite.play()
 				
 				ready_caixa_nome = ready_caixa.name
