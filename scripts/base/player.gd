@@ -14,7 +14,6 @@ var botao = false
 var pegou = false
 var obj = false
 var movable = true  # Jogador e movimentavel?
-var viajable = true
 
 func _physics_process(delta):
 	if Input.is_action_just_released("toggle_fullscreen"):
@@ -88,7 +87,7 @@ func _physics_process(delta):
 				__nova_caixa.position = self.position  # Posiçao da caixa e a mesma do player
 				get_parent().add_child(__nova_caixa)  # Spawna uma nova caixa
 		
-		elif Input.is_action_just_pressed("viagem") and viajable:
+		elif Input.is_action_just_pressed("viagem"):
 			var spawn_viagem = viagem.instance()
 			
 			self.get_parent().add_child(spawn_viagem)
