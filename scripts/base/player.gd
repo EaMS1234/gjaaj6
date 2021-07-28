@@ -7,9 +7,8 @@ const viagem = preload("res://cenas/base/viagem.tscn")
 const unable = preload("res://cenas/base/msg_erro.tscn")
 
 export var velo = 150  # Velocidade (pixel/sec)
-export var viajable = false
+export var viajable = true
 
-var fase
 var ready_caixa
 var ready_caixa_nome
 var mov = Vector2()  # Movimento 2D
@@ -21,7 +20,7 @@ var movable = true  # Jogador e movimentavel?
 var viajable_motivo = "Você não pode fazer isto agora."
 
 func _physics_process(delta):
-	fase = get_tree().get_nodes_in_group("__fase")[0]
+	var fase = get_tree().get_nodes_in_group("__fase")[0]
 	
 	if Input.is_action_just_released("toggle_fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
