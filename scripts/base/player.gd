@@ -7,6 +7,7 @@ const viagem = preload("res://cenas/base/viagem.tscn")
 
 export var velo = 150  # Velocidade (pixel/sec)
 
+var fase
 var ready_caixa
 var mov = Vector2()  # Movimento 2D
 var caixa = false
@@ -16,6 +17,8 @@ var obj = false
 var movable = true  # Jogador e movimentavel?
 
 func _physics_process(delta):
+	fase = get_tree().get_nodes_in_group("__fase")[0]
+	
 	if Input.is_action_just_released("toggle_fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 	
@@ -85,8 +88,9 @@ func _physics_process(delta):
 				
 				var __nova_caixa = spawn_caixa.instance()  # Instancia a caixa para ser adicionada posteriormente
 				__nova_caixa.position = self.position  # Posiçao da caixa e a mesma do player
-				get_parent().add_child(__nova_caixa)  # Spawna uma nova caixa
-		
+				
+				fase.add_child(__nova_caixa)
+				
 		elif Input.is_action_just_pressed("viagem"):
 			var spawn_viagem = viagem.instance()
 			
