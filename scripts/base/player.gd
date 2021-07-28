@@ -4,8 +4,10 @@ extends Area2D
 
 const spawn_caixa = preload("res://cenas/base/caixa.tscn")
 const viagem = preload("res://cenas/base/viagem.tscn")
+const unable = preload("res://cenas/base/msg_erro.tscn")
 
 export var velo = 150  # Velocidade (pixel/sec)
+export var viajable = false
 
 var fase
 var ready_caixa
@@ -16,6 +18,7 @@ var botao = false
 var pegou = false
 var obj = false
 var movable = true  # Jogador e movimentavel?
+var viajable_motivo = "Você não pode fazer isto agora."
 
 func _physics_process(delta):
 	fase = get_tree().get_nodes_in_group("__fase")[0]
@@ -131,9 +134,15 @@ func _physics_process(delta):
 							node.position = __nova_caixa.position
 
 		elif Input.is_action_just_pressed("viagem"):
-			var spawn_viagem = viagem.instance()
+			if viajable:
+				var spawn_viagem = viagem.instance()
+				
+				self.get_parent().add_child(spawn_viagem)
 			
-			self.get_parent().add_child(spawn_viagem)
+			else:
+				var txt = unable.instance()
+				txt.text = viajable_motivo
+				get_parent().add_child(txt)
 		
 	if mov.length() >= velo:
 		# Impede de se mover mais rapido que a velocidade estabelecida
