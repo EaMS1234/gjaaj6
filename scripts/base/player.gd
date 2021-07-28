@@ -9,6 +9,7 @@ export var velo = 150  # Velocidade (pixel/sec)
 
 var fase
 var ready_caixa
+var ready_caixa_nome
 var mov = Vector2()  # Movimento 2D
 var caixa = false
 var botao = false
@@ -78,6 +79,8 @@ func _physics_process(delta):
 				$player_sprite.animation = "c_frente"
 				$player_sprite.play()
 				
+				ready_caixa_nome = ready_caixa.name
+				
 				ready_caixa.queue_free()  # Apaga a caixa da memoria
 			
 			elif caixa == false and botao == false and pegou == true:
@@ -88,9 +91,24 @@ func _physics_process(delta):
 				
 				var __nova_caixa = spawn_caixa.instance()  # Instancia a caixa para ser adicionada posteriormente
 				__nova_caixa.position = self.position  # Posiçao da caixa e a mesma do player
+				__nova_caixa.name = ready_caixa_nome
 				
 				fase.add_child(__nova_caixa)
 				
+				if get_parent().tempo == 0:
+					for node in get_parent().pre.get_children():
+						if node.name == ready_caixa_nome:
+							node.position = __nova_caixa.position
+					
+					for node in get_parent().fu.get_children():
+						if node.name == ready_caixa_nome:
+							node.position = __nova_caixa.position
+				
+				elif get_parent().tempo == 1:
+					for node in get_parent().fu.get_children():
+						if node.name == ready_caixa_nome:
+							node.position = __nova_caixa.position
+
 		elif Input.is_action_just_pressed("viagem"):
 			var spawn_viagem = viagem.instance()
 			
