@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scripts/dialog.gd" type="Script" id=1]
+[ext_resource path="res://scripts/base/dialog.gd" type="Script" id=1]
 [ext_resource path="res://assets/graphics/fonts/dialog.tres" type="DynamicFont" id=2]
-[ext_resource path="res://scripts/texto.gd" type="Script" id=3]
+[ext_resource path="res://scripts/base/texto.gd" type="Script" id=3]
 
 [node name="dialog_bg" type="Polygon2D"]
 position = Vector2( 136, 568 )
