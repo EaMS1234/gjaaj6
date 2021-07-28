@@ -2,8 +2,8 @@
 
 extends Area2D
 
-const spawn_caixa = preload("res://cenas/caixa.tscn")
-const viagem = preload("res://cenas/viagem.tscn")
+const spawn_caixa = preload("res://cenas/base/caixa.tscn")
+const viagem = preload("res://cenas/base/viagem.tscn")
 
 export var velo = 150  # Velocidade (pixel/sec)
 
