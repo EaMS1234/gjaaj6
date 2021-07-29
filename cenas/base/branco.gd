@@ -7,9 +7,6 @@ var alvo = 1
 
 func _ready():
 	$AudioStreamPlayer2D.play()
-	
-	for node in get_tree().get_nodes_in_group("__player"):
-		node.movable = false
 
 func _physics_process(delta):
 	self.color = Color(255, 255, 255, x)
