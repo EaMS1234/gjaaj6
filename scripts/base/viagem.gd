@@ -46,7 +46,7 @@ func _physics_process(delta):
 
 func _viagem():
 	if get_parent().tempo == cursor:
-		get_tree().get_nodes_in_group("__player")[0].erro("Você já está nesta linha do tempo.")
+		get_tree().get_nodes_in_group("__player")[0].erro("Você já está no destino selecionado.")
 
 		for node in get_tree().get_nodes_in_group("__player"):
 			node.movable = true

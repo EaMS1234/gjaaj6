@@ -20,6 +20,7 @@ func _physics_process(delta):
 			
 			for node in get_tree().get_nodes_in_group("__player"):
 				node.movable = true
+				node.refresh_time = 0
 				
 			self.visible = false
 

@@ -7,8 +7,10 @@ const viagem = preload("res://cenas/base/viagem.tscn")
 const unable = preload("res://cenas/base/msg_erro.tscn")
 
 export var velo = 150  # Velocidade (pixel/sec)
+export var cooldown = 50
 export var viajable = true
 
+var refresh_time = 0
 var ready_caixa
 var ready_caixa_nome
 var mov = Vector2()  # Movimento 2D
@@ -20,6 +22,8 @@ var movable = true  # Jogador e movimentavel?
 var viajable_motivo = "Você não pode fazer isto agora."
 
 func _physics_process(delta):
+	refresh_time += 1
+	
 	var fase = get_tree().get_nodes_in_group("__fase")[0]
 	
 	if Input.is_action_just_released("toggle_fullscreen"):
@@ -139,7 +143,11 @@ func _physics_process(delta):
 				self.get_parent().add_child(spawn_viagem)
 			
 			else:
-				erro(viajable_motivo)
+				if refresh_time <= cooldown:
+					erro("Recarregando viagem no tempo. Aguarde.")
+				
+				else:
+					erro(viajable_motivo)
 		
 	if mov.length() >= velo:
 		# Impede de se mover mais rapido que a velocidade estabelecida
@@ -156,12 +164,23 @@ func _physics_process(delta):
 		else:
 			$bolha.stop()
 	
+	if refresh_time <= cooldown:
+		viajable = false
+	
+	else:
+		viajable = true
+	
 	self.position += mov * delta
 	
 	mov = mov * 0  # Jogador para quando nao esta recebendo nenhuma força
 
 func erro(msg):
 	var txt = unable.instance()
+	txt.add_to_group("__erros")
+	
+	for node in get_tree().get_nodes_in_group("__erros"):
+		node.queue_free()
+		
 	txt.text = msg
 	get_parent().add_child(txt)
 
