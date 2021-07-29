@@ -19,9 +19,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("viagem"):
 		_viagem()
 		
-		for node in get_tree().get_nodes_in_group("__player"):
-			node.movable = true
-		
 		queue_free()
 	
 	elif Input.is_action_just_pressed("ui_left"):
@@ -50,7 +47,10 @@ func _physics_process(delta):
 func _viagem():
 	if get_parent().tempo == cursor:
 		get_tree().get_nodes_in_group("__player")[0].erro("Você já está nesta linha do tempo.")
-	
+
+		for node in get_tree().get_nodes_in_group("__player"):
+			node.movable = true
+
 	else:
 		if cursor == 0:
 			var trans = branco.instance()
