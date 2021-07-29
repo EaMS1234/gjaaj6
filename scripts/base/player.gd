@@ -139,9 +139,7 @@ func _physics_process(delta):
 				self.get_parent().add_child(spawn_viagem)
 			
 			else:
-				var txt = unable.instance()
-				txt.text = viajable_motivo
-				get_parent().add_child(txt)
+				erro(viajable_motivo)
 		
 	if mov.length() >= velo:
 		# Impede de se mover mais rapido que a velocidade estabelecida
@@ -161,7 +159,12 @@ func _physics_process(delta):
 	self.position += mov * delta
 	
 	mov = mov * 0  # Jogador para quando nao esta recebendo nenhuma força
-	
+
+func erro(msg):
+	var txt = unable.instance()
+	txt.text = msg
+	get_parent().add_child(txt)
+
 func _on_player_area_area_entered(area):  # ENTROU
 	if area in get_tree().get_nodes_in_group("__obj"):
 		$bolha.visible = true

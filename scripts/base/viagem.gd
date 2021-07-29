@@ -1,5 +1,7 @@
 extends Polygon2D
 
+const branco = preload("res://cenas/base/branco.tscn")
+
 signal pa
 signal pre
 signal fu
@@ -47,20 +49,20 @@ func _physics_process(delta):
 
 func _viagem():
 	if get_parent().tempo == cursor:
-		print("JA ESTA NO TEMPO ALVO")
+		get_tree().get_nodes_in_group("__player")[0].erro("Você já está nesta linha do tempo.")
 	
 	else:
 		if cursor == 0:
-			print("VIAJANDO PARA O PASSADO")
-			
-			get_parent().tempo = 0
+			var trans = branco.instance()
+			trans.alvo = 0
+			get_tree().get_nodes_in_group("__sala")[0].add_child(trans)
 		
 		elif cursor == 1:
-			print("VIAJANDO PARA O PRESENTE")
-			
-			get_parent().tempo = 1
+			var trans = branco.instance()
+			trans.alvo = 1
+			get_tree().get_nodes_in_group("__sala")[0].add_child(trans)
 		
 		elif cursor == 2:
-			print("VIAJANDO PARA O FUTURO")
-			
-			get_parent().tempo = 2
+			var trans = branco.instance()
+			trans.alvo = 2
+			get_tree().get_nodes_in_group("__sala")[0].add_child(trans)
