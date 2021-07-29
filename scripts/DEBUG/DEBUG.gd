@@ -13,6 +13,7 @@ var tempo = 1  # 0 = PASSADO. 1 = PRESENTE. 2 = FUTURO.
 
 func _physics_process(delta):
 	if tempo == 0:
+		$bg.animation = "pa"
 		$Label.text = "PASSADO"
 		
 		self.add_child(pa)
@@ -20,6 +21,7 @@ func _physics_process(delta):
 		self.remove_child(fu)
 	
 	elif tempo == 1:
+		$bg.animation = "pre"
 		$Label.text = "PRESENTE"
 		
 		self.remove_child(pa)
@@ -27,6 +29,7 @@ func _physics_process(delta):
 		self.remove_child(fu)
 		
 	elif tempo == 2:
+		$bg.animation = "fu"
 		$Label.text = "FUTURO"
 		
 		self.remove_child(pa)

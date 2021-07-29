@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/graphics/SALAPRINCIPAL/salaprincipal.png" type="Texture" id=1]
 [ext_resource path="res://assets/graphics/icon_1.png" type="Texture" id=2]
@@ -9,12 +9,24 @@
 [ext_resource path="res://cenas/base/pplaca.tscn" type="PackedScene" id=7]
 [ext_resource path="res://cenas/base/player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/graphics/fonts/dialog.tres" type="DynamicFont" id=9]
+[ext_resource path="res://assets/graphics/Viagem no tempo/SALAPRINCIPALPASSADO.png" type="Texture" id=10]
+[ext_resource path="res://assets/graphics/Viagem no tempo/salaprincipalfu.png" type="Texture" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "pa",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "default",
+"name": "pre",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "fu",
 "speed": 5.0
 } ]
 
@@ -56,10 +68,11 @@ __meta__ = {
 }
 
 [node name="bg" type="AnimatedSprite" parent="."]
-position = Vector2( 512, 300.5 )
-scale = Vector2( 1.96545, 2 )
+position = Vector2( 514.375, 302.133 )
+scale = Vector2( 0.397409, 0.407823 )
 z_index = -100
 frames = SubResource( 1 )
+animation = "pre"
 
 [connection signal="click" from="botao_area" to="Sprite2" method="_on_botao_area_click"]
 [connection signal="click" from="botao_area2" to="." method="_on_botao_area2_click"]

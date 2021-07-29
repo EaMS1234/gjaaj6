@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/graphics/placasdepressao/placazdepressao1.png" type="Texture" id=1]
 [ext_resource path="res://scripts/base/pplaca.gd" type="Script" id=2]
 [ext_resource path="res://assets/graphics/placasdepressao/placazdepressao2.png" type="Texture" id=3]
+[ext_resource path="res://assets/graphics/Viagem no tempo/placapassado2.png" type="Texture" id=4]
+[ext_resource path="res://assets/graphics/Viagem no tempo/placapassado1.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -14,6 +16,16 @@ animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "activate",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default_p",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "activate_p",
 "speed": 5.0
 } ]
 

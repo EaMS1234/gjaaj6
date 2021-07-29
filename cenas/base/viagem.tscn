@@ -1,18 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/graphics/fonts/dialog.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/base/viagem.gd" type="Script" id=2]
 [ext_resource path="res://assets/graphics/SALAPRINCIPAL/salaprincipal.png" type="Texture" id=3]
-[ext_resource path="res://assets/graphics/icon_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/graphics/Viagem no tempo/salaprincipalfu.png" type="Texture" id=4]
 [ext_resource path="res://assets/graphics/Viagem no tempo/SALAPRINCIPALPASSADO.png" type="Texture" id=5]
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [node name="viagem_bg" type="Polygon2D"]
 position = Vector2( 216, 282 )
@@ -46,14 +38,15 @@ __meta__ = {
 
 [node name="pre" type="Sprite" parent="."]
 position = Vector2( 296, 126 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 3 )
 
-[node name="fu" type="AnimatedSprite" parent="."]
-position = Vector2( 424, 126 )
-frames = SubResource( 2 )
+[node name="fu" type="Sprite" parent="."]
+position = Vector2( 456, 126 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 4 )
 
 [node name="pa" type="Sprite" parent="."]
 position = Vector2( 136, 126 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 5 )
