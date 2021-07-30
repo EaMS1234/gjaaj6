@@ -1,6 +1,6 @@
 # Movimento do jogador
 
-extends KinematicBody2D
+extends RigidBody2D
 
 const spawn_caixa = preload("res://cenas/base/caixa.tscn")
 const viagem = preload("res://cenas/base/viagem.tscn")

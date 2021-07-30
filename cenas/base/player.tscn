@@ -8,10 +8,16 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.3333, 21.3333 )
 
-[node name="player_area" type="KinematicBody2D" groups=[
+[node name="player_area" type="RigidBody2D" groups=[
 "__player",
 ]]
 scale = Vector2( 0.75, 0.75 )
+mode = 2
+gravity_scale = 0.0
+custom_integrator = true
+continuous_cd = 2
+linear_damp = 0.0
+angular_damp = 0.0
 script = ExtResource( 2 )
 velo = 200
 
