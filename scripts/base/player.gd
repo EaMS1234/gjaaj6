@@ -13,6 +13,7 @@ export var viajable = true
 var refresh_time = 0
 var ready_caixa
 var ready_caixa_nome
+var ready_caixa_tempo
 var mov = Vector2()  # Movimento 2D
 var caixa = false
 var botao = false
@@ -107,7 +108,8 @@ func _physics_process(delta):
 				$player_sprite.play()
 				
 				ready_caixa_nome = ready_caixa.name
-				
+				ready_caixa_tempo = ready_caixa.default_time
+
 				ready_caixa.queue_free()  # Apaga a caixa da memoria
 			
 			elif caixa == false and botao == false and pegou == true:
@@ -119,8 +121,11 @@ func _physics_process(delta):
 				var __nova_caixa = spawn_caixa.instance()  # Instancia a caixa para ser adicionada posteriormente
 				__nova_caixa.position = self.position  # Posiçao da caixa e a mesma do player
 				__nova_caixa.name = ready_caixa_nome
+				__nova_caixa.default_time = ready_caixa_tempo
 				
 				fase.add_child(__nova_caixa)
+				
+				ready_caixa_tempo = null
 				
 				if get_parent().tempo == 0:
 					for node in get_parent().pre.get_children():

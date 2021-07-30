@@ -8,6 +8,8 @@
 
 [node name="caixa_area" parent="." instance=ExtResource( 1 )]
 position = Vector2( 704, 64 )
+default_time = 0
 
 [node name="caixa_area2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 256, 448 )
+default_time = 0

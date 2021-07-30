@@ -42,7 +42,7 @@ func _physics_process(delta):
 func _viagem():
 	if get_parent().tempo == cursor:
 		get_tree().get_nodes_in_group("__player")[0].erro("Você já está no destino selecionado.")
-
+		
 		for node in get_tree().get_nodes_in_group("__player"):
 			node.movable = true
 
@@ -50,14 +50,31 @@ func _viagem():
 		if cursor == 0:
 			var trans = branco.instance()
 			trans.alvo = 0
+			
 			get_tree().get_nodes_in_group("__sala")[0].add_child(trans)
 		
 		elif cursor == 1:
 			var trans = branco.instance()
 			trans.alvo = 1
-			get_tree().get_nodes_in_group("__sala")[0].add_child(trans)
+			
+			if get_tree().get_nodes_in_group("__player")[0].ready_caixa_tempo != null and get_tree().get_nodes_in_group("__player")[0].ready_caixa_tempo < cursor:
+				get_tree().get_nodes_in_group("__player")[0].erro("Você não pode levar objetos do passado para o futuro.")
+			
+				for node in get_tree().get_nodes_in_group("__player"):
+					node.movable = true
+			
+			else:
+				get_tree().get_nodes_in_group("__sala")[0].add_child(trans)
 		
 		elif cursor == 2:
 			var trans = branco.instance()
 			trans.alvo = 2
-			get_tree().get_nodes_in_group("__sala")[0].add_child(trans)
+			
+			if get_tree().get_nodes_in_group("__player")[0].ready_caixa_tempo != null and get_tree().get_nodes_in_group("__player")[0].ready_caixa_tempo < cursor:
+				get_tree().get_nodes_in_group("__player")[0].erro("Você não pode levar objetos do passado para o futuro.")
+				
+				for node in get_tree().get_nodes_in_group("__player"):
+					node.movable = true
+			
+			else:
+				get_tree().get_nodes_in_group("__sala")[0].add_child(trans)
