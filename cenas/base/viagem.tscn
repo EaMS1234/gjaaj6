@@ -8,6 +8,7 @@
 
 [node name="viagem_bg" type="Polygon2D"]
 position = Vector2( 216, 282 )
+z_index = 5
 color = Color( 0, 0, 0, 0.498039 )
 polygon = PoolVector2Array( 0, 0, 592, 0, 592, 222, 0, 222 )
 script = ExtResource( 2 )

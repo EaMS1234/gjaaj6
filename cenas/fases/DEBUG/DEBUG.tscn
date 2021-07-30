@@ -72,7 +72,7 @@ __meta__ = {
 [node name="bg" type="AnimatedSprite" parent="."]
 position = Vector2( 514.375, 302.133 )
 scale = Vector2( 0.397409, 0.407823 )
-z_index = -100
+z_index = -4
 frames = SubResource( 1 )
 animation = "pre"
 
@@ -89,6 +89,7 @@ __meta__ = {
 
 [node name="__TILE" type="TileMap" parent="."]
 scale = Vector2( 0.75, 0.75 )
+z_index = -1
 tile_set = ExtResource( 11 )
 cell_size = Vector2( 80, 80 )
 format = 1

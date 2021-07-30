@@ -31,7 +31,7 @@ velo = 200
 visible = false
 position = Vector2( 0, -56 )
 scale = Vector2( 0.375, 0.375 )
-z_index = 10
+z_index = 1
 frames = ExtResource( 3 )
 animation = "reverso"
 
