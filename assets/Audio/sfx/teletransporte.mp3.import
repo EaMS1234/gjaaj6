@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/teletransporte.mp3-86ff5e06840fff34f33b909a71c66b48.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/sfx/teletransporte.mp3"
+dest_files=[ "res://.import/teletransporte.mp3-86ff5e06840fff34f33b909a71c66b48.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

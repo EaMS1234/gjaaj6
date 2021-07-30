@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/graphics/animations/player_sprite.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://scripts/base/player.gd" type="Script" id=2]
+[ext_resource path="res://assets/graphics/animations/bolha.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://scripts/base/player_sprite.gd" type="Script" id=4]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.0
+rough = true
+absorbent = true
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 10.6667
+
+[node name="player_area" type="RigidBody2D" groups=[
+"__player",
+]]
+scale = Vector2( 0.75, 0.75 )
+mode = 2
+physics_material_override = SubResource( 1 )
+gravity_scale = 0.0
+custom_integrator = true
+continuous_cd = 2
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 2 )
+velo = 200
+
+[node name="bolha" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 0, -56 )
+scale = Vector2( 0.375, 0.375 )
+z_index = 1
+frames = ExtResource( 3 )
+animation = "reverso"
+
+[node name="player_sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = ExtResource( 1 )
+animation = "a_frente"
+script = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="player_collision" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -16, -40, -32, -16, -32, 32, -16, 48, 16, 48, 32, 32, 32, -16, 16, -40 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 21.3333 )
+shape = SubResource( 2 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

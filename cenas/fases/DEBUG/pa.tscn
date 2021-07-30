@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://cenas/base/caixa.tscn" type="PackedScene" id=1]
+
+[node name="pa" type="Node2D" groups=[
+"__fase",
+]]
+
+[node name="caixa_area" parent="." instance=ExtResource( 1 )]
+position = Vector2( 704, 64 )
+default_time = 0
+
+[node name="caixa_area2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, 448 )
+default_time = 0
