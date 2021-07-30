@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/musicasdopassado.mp3-c128b7eb3e1cba30b05ada78aaadad18.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/musicasdopassado.mp3"
+dest_files=[ "res://.import/musicasdopassado.mp3-c128b7eb3e1cba30b05ada78aaadad18.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ambienciafuturo.mp3-1abff6665c904610bd1d95ef7fe0968a.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/ambienciafuturo.mp3"
+dest_files=[ "res://.import/ambienciafuturo.mp3-1abff6665c904610bd1d95ef7fe0968a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
