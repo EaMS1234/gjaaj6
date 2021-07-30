@@ -6,3 +6,9 @@ export_presets.cfg
 
 # Mono-specific ignores
 .mono/
+exports/assets/mensagens
+exports/linux.pck
+exports/linux.x86_64
+exports/title.zip
+exports/windows.exe
+exports/windows.pck
