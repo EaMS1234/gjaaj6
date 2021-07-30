@@ -1,6 +1,6 @@
 # Movimento do jogador
 
-extends Area2D
+extends KinematicBody2D
 
 const spawn_caixa = preload("res://cenas/base/caixa.tscn")
 const viagem = preload("res://cenas/base/viagem.tscn")
@@ -193,7 +193,7 @@ func erro(msg):
 	txt.text = msg
 	get_parent().add_child(txt)
 
-func _on_player_area_area_entered(area):  # ENTROU
+func _on_Area2D_area_entered(area):
 	if area in get_tree().get_nodes_in_group("__obj"):
 		$bolha.visible = true
 		$bolha.animation = "default"
@@ -208,8 +208,8 @@ func _on_player_area_area_entered(area):  # ENTROU
 	
 	if area in get_tree().get_nodes_in_group("__botao"):
 		botao = true
-		
-func _on_player_area_area_exited(area):  # SAIU
+
+func _on_Area2D_area_exited(area):
 	if area in get_tree().get_nodes_in_group("__obj"):
 		$bolha.visible = true
 		$bolha.animation = "reverso"

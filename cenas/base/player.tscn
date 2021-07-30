@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/graphics/animations/player_sprite.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scripts/base/player.gd" type="Script" id=2]
 [ext_resource path="res://assets/graphics/animations/bolha.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://scripts/base/player_sprite.gd" type="Script" id=4]
 
-[node name="player_area" type="Area2D" groups=[
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 21.3333, 21.3333 )
+
+[node name="player_area" type="KinematicBody2D" groups=[
 "__player",
 ]]
 scale = Vector2( 0.75, 0.75 )
@@ -26,8 +29,14 @@ frames = ExtResource( 1 )
 animation = "a_frente"
 script = ExtResource( 4 )
 
-[node name="player_collision" type="CollisionPolygon2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="player_collision" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( -16, -40, -32, -16, -32, 32, -16, 48, 16, 48, 32, 32, 32, -16, 16, -40 )
 
-[connection signal="area_entered" from="." to="." method="_on_player_area_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_player_area_area_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 21.3333 )
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
