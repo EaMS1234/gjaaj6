@@ -20,7 +20,8 @@ var caixa = false
 var botao = false
 var pegou = false
 var obj = false
-var movable = true  # Jogador e movimentavel?
+var movable = true  # Jogador e movimentavel?]
+var block = false
 var viajable_motivo = "Você não pode fazer isto agora."
 
 func _integrate_forces(state):
@@ -117,36 +118,40 @@ func _physics_process(delta):
 				ready_caixa.queue_free()  # Apaga a caixa da memoria
 			
 			elif caixa == false and botao == false and pegou == true:
-				pegou = false
-				
-				$player_sprite.animation = "a_frente"
-				$player_sprite.play()
-				
-				var __nova_caixa = spawn_caixa.instance()  # Instancia a caixa para ser adicionada posteriormente
-				__nova_caixa.position = self.position  # Posiçao da caixa e a mesma do player
-				__nova_caixa.name = ready_caixa_nome
-				__nova_caixa.default_time = ready_caixa_tempo
-				
-				fase.add_child(__nova_caixa)
-				
-				ready_caixa_tempo = null
-				
-				if get_parent().tempo == 0:
-					for node in get_parent().pre.get_children():
-						if node.name == ready_caixa_nome:
-							node.position = __nova_caixa.position
+				if block == false:
+					pegou = false
 					
-					for node in get_parent().fu.get_children():
-						if node.name == ready_caixa_nome:
-							node.position = __nova_caixa.position
+					$player_sprite.animation = "a_frente"
+					$player_sprite.play()
+					
+					var __nova_caixa = spawn_caixa.instance()  # Instancia a caixa para ser adicionada posteriormente
+					__nova_caixa.position = self.position  # Posiçao da caixa e a mesma do player
+					__nova_caixa.name = ready_caixa_nome
+					__nova_caixa.default_time = ready_caixa_tempo
+					
+					fase.add_child(__nova_caixa)
+					
+					ready_caixa_tempo = null
+					
+					if get_parent().tempo == 0:
+						for node in get_parent().pre.get_children():
+							if node.name == ready_caixa_nome:
+								node.position = __nova_caixa.position
+						
+						for node in get_parent().fu.get_children():
+							if node.name == ready_caixa_nome:
+								node.position = __nova_caixa.position
+					
+					elif get_parent().tempo == 1:
+						for node in get_parent().fu.get_children():
+							if node.name == ready_caixa_nome:
+								node.position = __nova_caixa.position
 				
-				elif get_parent().tempo == 1:
-					for node in get_parent().fu.get_children():
-						if node.name == ready_caixa_nome:
-							node.position = __nova_caixa.position
+				else:
+					erro(viajable_motivo)
 
 		elif Input.is_action_just_pressed("viagem"):
-			if viajable:
+			if viajable == true and block == false:
 				var spawn_viagem = viagem.instance()
 				
 				self.get_parent().add_child(spawn_viagem)
@@ -211,6 +216,9 @@ func _on_Area2D_area_entered(area):
 	
 	if area in get_tree().get_nodes_in_group("__botao"):
 		botao = true
+	
+	if area in get_tree().get_nodes_in_group("__block"):
+		block = true
 
 func _on_Area2D_area_exited(area):
 	if area in get_tree().get_nodes_in_group("__obj"):
@@ -225,3 +233,6 @@ func _on_Area2D_area_exited(area):
 	
 	if area in get_tree().get_nodes_in_group("__botao"):
 		botao = false
+	
+	if area in get_tree().get_nodes_in_group("__block"):
+		block = false
