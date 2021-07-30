@@ -1,5 +1,7 @@
 extends Node
 
+var trans = preload("res://cenas/base/preto.tscn").instance()
+
 var fases = [
 	preload("res://cenas/fases/DEBUG/DEBUG.tscn")
 ]  # Conjunto das fases (EM ORDEM)
@@ -16,6 +18,7 @@ var intro_text = [
 	""
 ]
 
+var fase_num = -1
 var x = 0
 
 func _ready():
@@ -25,6 +28,18 @@ func _ready():
 		
 	$text1.text = intro_text[0]
 	$text1.visible = true
+
+func _process(delta):
+	if Input.is_action_just_pressed("toggle_fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		if len(intro_text) > x:
+			x += len(intro_text)
+		
+		else:
+			$musica.fade = true
+			add_child(trans)
 
 func _on_timer_texto_timeout():
 	x += 1
