@@ -11,6 +11,10 @@ var fu = preload("res://cenas/fases/DEBUG/fu.tscn").instance()
 
 var tempo = 1  # 0 = PASSADO. 1 = PRESENTE. 2 = FUTURO.
 
+func _ready():
+	print($ReferenceRect.rect_size)
+	$player_area.screen_size = $ReferenceRect.rect_size
+
 func _physics_process(delta):
 	if tempo == 0:
 		$bg.animation = "pa"

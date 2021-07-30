@@ -11,6 +11,7 @@ export var cooldown = 50
 export var viajable = true
 
 var refresh_time = 0
+var screen_size
 var ready_caixa
 var ready_caixa_nome
 var ready_caixa_tempo
@@ -174,6 +175,9 @@ func _physics_process(delta):
 	
 	else:
 		viajable = true
+	
+	position.x = clamp(position.x, 112, screen_size.x)
+	position.y = clamp(position.y, 56, screen_size.y)
 	
 	self.position += mov * delta
 	
