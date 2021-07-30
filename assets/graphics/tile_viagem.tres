@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=7 format=2]
 
-[ext_resource path="res://assets/graphics/Tilesets/tilesetmuro_fix.png" type="Texture" id=2]
+[ext_resource path="res://assets/graphics/Tilesets/tilesetmuro_fix_pa_fu.png" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 28.8098, 15.0495, 25.1274, 25.3213, 15.0495, 29.3912, 0, 52.2604, 0, 55.1675, 15.0495, 65.2454, 25.3213, 80, 32.2983, 80, 48.9657, 64.8578, 54.9737, 55.1675, 65.2454, 51.2913, 80, 27.2593, 80, 25.3213, 65.4392, 15.0495, 55.1675, 0, 55.3613 )

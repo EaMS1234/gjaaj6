@@ -9,6 +9,9 @@ var pa = preload("res://cenas/fases/DEBUG/pa.tscn").instance()
 var pre = preload("res://cenas/fases/DEBUG/pre.tscn").instance()
 var fu = preload("res://cenas/fases/DEBUG/fu.tscn").instance()
 
+var tile_norm = load("res://assets/graphics/tile_presente.tres")
+var tile_viaj = load("res://assets/graphics/tile_viagem.tres")
+
 var tempo = 1  # 0 = PASSADO. 1 = PRESENTE. 2 = FUTURO.
 
 func _ready():
@@ -30,6 +33,7 @@ func _physics_process(delta):
 			$__TILE.hide()
 		
 		else:
+			$__TILE.tile_set = tile_viaj
 			$__TILE.collision_layer = 1
 			$__TILE.collision_mask = 1
 			$__TILE.show()
@@ -48,6 +52,7 @@ func _physics_process(delta):
 			$__TILE.hide()
 		
 		else:
+			$__TILE.tile_set = tile_norm
 			$__TILE.collision_layer = 1
 			$__TILE.collision_mask = 1
 			$__TILE.show()
@@ -66,6 +71,7 @@ func _physics_process(delta):
 			$__TILE.hide()
 		
 		else:
+			$__TILE.tile_set = tile_viaj
 			$__TILE.collision_layer = 1
 			$__TILE.collision_mask = 1
 			$__TILE.show()
