@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bolha.mp3-67d95d6509f999c5c44f6e959fd7657a.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/bolha.mp3"
+dest_files=[ "res://.import/bolha.mp3-67d95d6509f999c5c44f6e959fd7657a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

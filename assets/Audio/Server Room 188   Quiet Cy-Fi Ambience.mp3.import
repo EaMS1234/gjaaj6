@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Server Room 188   Quiet Cy-Fi Ambience.mp3-25f34b305e1a1f2230d307924d2197ae.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/Server Room 188   Quiet Cy-Fi Ambience.mp3"
+dest_files=[ "res://.import/Server Room 188   Quiet Cy-Fi Ambience.mp3-25f34b305e1a1f2230d307924d2197ae.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

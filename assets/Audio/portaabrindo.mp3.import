@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/portaabrindo.mp3-4d10442a8ab02010a7bf7a8c9c5deaca.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/portaabrindo.mp3"
+dest_files=[ "res://.import/portaabrindo.mp3-4d10442a8ab02010a7bf7a8c9c5deaca.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
