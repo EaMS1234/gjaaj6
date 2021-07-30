@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://cenas/fases/DEBUG/Sprite.gd" type="Script" id=1]
 [ext_resource path="res://assets/graphics/fonts/dialog.tres" type="DynamicFont" id=2]
@@ -13,6 +13,15 @@
 [ext_resource path="res://assets/graphics/tile_presente.tres" type="TileSet" id=11]
 [ext_resource path="res://cenas/fases/DEBUG/__TILE.gd" type="Script" id=12]
 [ext_resource path="res://assets/graphics/icon_1.png" type="Texture" id=13]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta5.png" type="Texture" id=14]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta3.png" type="Texture" id=15]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta8.png" type="Texture" id=16]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta9.png" type="Texture" id=17]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta2.png" type="Texture" id=18]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta1.png" type="Texture" id=19]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta6.png" type="Texture" id=20]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta7.png" type="Texture" id=21]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta4.png" type="Texture" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -32,6 +41,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 22 ), ExtResource( 14 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
 [node name="DEBUG" type="Node2D" groups=[
 "__sala",
 ]]
@@ -42,7 +59,6 @@ position = Vector2( 512, 320 )
 
 [node name="botao_area" parent="." instance=ExtResource( 10 )]
 position = Vector2( 860.008, 501.915 )
-max_click = 10
 
 [node name="botao_area2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 457.819, 388.724 )
@@ -72,7 +88,7 @@ __meta__ = {
 [node name="bg" type="AnimatedSprite" parent="."]
 position = Vector2( 514.375, 302.133 )
 scale = Vector2( 0.397409, 0.407823 )
-z_index = -4
+z_index = -5
 frames = SubResource( 1 )
 animation = "pre"
 
@@ -104,7 +120,23 @@ dispo_fu = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="blocked_area"]
 polygon = PoolVector2Array( 683.449, 69.199, 667.186, 86.8767, 665.771, 129.303, 598.596, 132.839, 595.061, 168.194, 664.357, 170.315, 658.7, 187.993, 615.567, 189.407, 604.253, 209.913, 608.496, 398.004, 626.88, 414.974, 693.349, 414.974, 714.562, 395.175, 710.319, 183.043, 716.683, 171.73, 781.737, 163.244, 778.908, 137.788, 716.683, 127.889, 710.319, 116.575, 720.926, 108.797, 784.565, 108.09, 781.737, 69.199 )
 
+[node name="porta_area" type="Area2D" parent="." groups=[
+"__porta",
+]]
+position = Vector2( 512.078, 42.7153 )
+
+[node name="porta_sprite" type="AnimatedSprite" parent="porta_area"]
+position = Vector2( 1.53027, -3.60719 )
+scale = Vector2( 0.397, 0.408 )
+z_index = -4
+frames = SubResource( 2 )
+
+[node name="porta_col" type="CollisionPolygon2D" parent="porta_area"]
+polygon = PoolVector2Array( -64.0778, 13.2847, -72.0778, -10.7153, -0.0777588, -18.7153, 71.9222, -10.7153, 63.9222, 13.2847, 47.9222, 29.2847, -48.0778, 29.2847 )
+disabled = true
+
 [connection signal="click" from="botao_area" to="Sprite2" method="_on_botao_area_click"]
 [connection signal="click" from="botao_area2" to="." method="_on_botao_area2_click"]
 [connection signal="press" from="pplaca_area" to="Sprite" method="_on_pplaca_area_press"]
 [connection signal="unpress" from="pplaca_area" to="Sprite" method="_on_pplaca_area_unpress"]
+[connection signal="area_entered" from="porta_area" to="." method="_on_porta_area_area_entered"]
