@@ -2,11 +2,6 @@ extends Polygon2D
 
 const branco = preload("res://cenas/base/branco.tscn")
 
-signal pa
-signal pre
-signal fu
-signal atual
-
 var cursor = 1
 
 func _ready():
