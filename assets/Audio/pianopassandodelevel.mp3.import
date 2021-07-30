@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pianopassandodelevel.mp3-5efd7ce79901ee94224a8d5acff5e079.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/pianopassandodelevel.mp3"
+dest_files=[ "res://.import/pianopassandodelevel.mp3-5efd7ce79901ee94224a8d5acff5e079.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
