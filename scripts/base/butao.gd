@@ -36,9 +36,9 @@ func _physics_process(delta):
 			$botao_sprite.animation = "default-p"
 
 func _on_botao_area_area_entered(area):
-	if area in get_tree().get_nodes_in_group("__player") and area.pegou == false:
+	if area.get_parent() in get_tree().get_nodes_in_group("__player") and area.get_parent().pegou == false:
 		clickable = true
 
 func _on_botao_area_area_exited(area):
-	if area in get_tree().get_nodes_in_group("__player"):
+	if area.get_parent() in get_tree().get_nodes_in_group("__player"):
 		clickable = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/graphics/SALAPRINCIPAL/salaprincipal.png" type="Texture" id=1]
 [ext_resource path="res://assets/graphics/icon_1.png" type="Texture" id=2]
@@ -14,14 +14,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "pa",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "pre",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "pa",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ) ],
@@ -29,6 +29,9 @@ animations = [ {
 "name": "fu",
 "speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 56, 52.865 )
 
 [node name="DEBUG" type="Node2D" groups=[
 "__sala",
@@ -73,6 +76,24 @@ scale = Vector2( 0.397409, 0.407823 )
 z_index = -100
 frames = SubResource( 1 )
 animation = "pre"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="." groups=[
+"__col",
+]]
+margin_left = 112.0
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 576.0
+editor_only = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 664, 332.865 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource( 2 )
 
 [connection signal="click" from="botao_area" to="Sprite2" method="_on_botao_area_click"]
 [connection signal="click" from="botao_area2" to="." method="_on_botao_area2_click"]

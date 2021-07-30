@@ -1,6 +1,6 @@
 # Movimento do jogador
 
-extends Area2D
+extends RigidBody2D
 
 const spawn_caixa = preload("res://cenas/base/caixa.tscn")
 const viagem = preload("res://cenas/base/viagem.tscn")
@@ -11,6 +11,7 @@ export var cooldown = 50
 export var viajable = true
 
 var refresh_time = 0
+var screen_size
 var ready_caixa
 var ready_caixa_nome
 var ready_caixa_tempo
@@ -175,6 +176,9 @@ func _physics_process(delta):
 	else:
 		viajable = true
 	
+	position.x = clamp(position.x, 112, screen_size.x)
+	position.y = clamp(position.y, 56, screen_size.y)
+	
 	self.position += mov * delta
 	
 	mov = mov * 0  # Jogador para quando nao esta recebendo nenhuma força
@@ -189,7 +193,7 @@ func erro(msg):
 	txt.text = msg
 	get_parent().add_child(txt)
 
-func _on_player_area_area_entered(area):  # ENTROU
+func _on_Area2D_area_entered(area):
 	if area in get_tree().get_nodes_in_group("__obj"):
 		$bolha.visible = true
 		$bolha.animation = "default"
@@ -204,8 +208,8 @@ func _on_player_area_area_entered(area):  # ENTROU
 	
 	if area in get_tree().get_nodes_in_group("__botao"):
 		botao = true
-		
-func _on_player_area_area_exited(area):  # SAIU
+
+func _on_Area2D_area_exited(area):
 	if area in get_tree().get_nodes_in_group("__obj"):
 		$bolha.visible = true
 		$bolha.animation = "reverso"
