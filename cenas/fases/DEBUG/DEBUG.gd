@@ -46,7 +46,13 @@ func _physics_process(delta):
 		if $botao_area.clicked == $botao_area.max_click:
 			$porta_area/porta_col.disabled = false
 			
-			if $porta_area/porta_sprite.frame == 0:
+			if $porta_area/porta_audio.get_playback_position() >= 4.6:
+				$porta_area/porta_audio.stream_paused = true
+			
+			else:
+				$porta_area/porta_audio.stream_paused = false
+			
+			if $porta_area/porta_sprite.frame == 0 and $porta_area/porta_audio.get_playback_position() > 1.2:
 				$porta_area/porta_sprite.play()
 		
 		$bg.animation = "pre"
