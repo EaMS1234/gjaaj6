@@ -147,9 +147,11 @@ func _physics_process(delta):
 								node.position = __nova_caixa.position
 					
 					elif get_parent().tempo == 1:
-						for node in get_parent().fu.get_children():
-							if node.name == ready_caixa_nome:
-								node.position = __nova_caixa.position
+						for item in get_parent().get_children():
+							if item.name == "fu":
+								for node in get_parent().fu.get_children():
+									if node.name == ready_caixa_nome:
+										node.position = __nova_caixa.position
 				
 				else:
 					erro(viajable_motivo)
