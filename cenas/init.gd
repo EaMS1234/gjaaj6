@@ -6,6 +6,7 @@ var fases = [
 	preload("res://cenas/fases/fase_1/fase1.tscn"),
 	preload("res://cenas/fases/fase_2/fase2.tscn"),
 	preload("res://cenas/fases/fase_3/fase3.tscn"),
+	preload("res://cenas/fases/fase_4/fase4.tscn"),
 	preload("res://cenas/fases/DEBUG/DEBUG.tscn")
 ]  # Conjunto das fases (EM ORDEM)
 

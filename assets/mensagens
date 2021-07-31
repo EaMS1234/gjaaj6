@@ -42,11 +42,22 @@ debug.debug; 1234567890123456789012345678901234567890123456789012345678901234567
 2.1; Por favor, caso esteja em pâncio, ligue para o nosso serviço de atendimento em +55 (87) 52618-3958 de Segunda a Sábado.
 
 3.0; Para este próximo nível, você aprenderá sobre caixas e placas de pressão.
-3.0; Você consegue pegar ou largar uma caixa pressionando SHIFT.
+3.0; Você consegue pegar ou largar uma caixa pressionando ESPAÇO ou ENTER.
 3.0; Placas de pressão serão ativadas quando uma caixa estiver sobre elas.
 3.0; Ative a esta placa de pressão para abrir a porta.
 
 3.1; "Relatório de Cobaia Nº5392, Experimento Nº3: ...
 3.1; ... Desempenho suficiente."
 3.1; Por favor prossiga para o próximo nível.
+
+4.0; Você tem se saído muito bem até agora.
+4.0; Finalmente chegamos à tão esperada hora...
+4.0; Em seu chassi foi instalado um dispositivo de lapso temporal,
+4.0; Você pode ativá-lo pressionando SHIFT e selecionando seu destino.
+4.0; Lembre-se de que a conexão é instável. Logo, você pode experienciar efeitos colaterais da viagem no tempo em sua visão - caso esteja em outra linha temporal.
+
+4.1; Muito bem! Isso parece ser tão natural para você.
+4.1; Apenas 98 cobaias chegaram até este ponto. A maioria têm algum defeito antes ou congela devido à incompetência dos nossos programadores mal-pagos em criar uma I.A. capaz de
+4.1; compreender Paradoxos e/ou Loops temporais.
+4.1; Por favor, prossiga para o próximo nível.
 
