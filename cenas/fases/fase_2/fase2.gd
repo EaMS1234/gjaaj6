@@ -14,7 +14,7 @@ var tempo = 1  # 0 = PASSADO. 1 = PRESENTE. 2 = FUTURO.
 var x = 0
 var y = 0
 var z = 0
-var a = 0
+var a = -1
 
 func _ready():
 	$player_area.screen_size = $ReferenceRect.rect_size
@@ -86,6 +86,7 @@ func _physics_process(_delta):
 	if brc in self.get_children():
 		if brc.visible == false:
 			$player_clone.visible = false
+			a += 1
 
 func _on_porta_area_area_entered(area):
 	var trans = load("res://cenas/base/preto.tscn").instance()
