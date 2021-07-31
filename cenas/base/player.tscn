@@ -27,7 +27,7 @@ continuous_cd = 2
 linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource( 2 )
-velo = 200
+velo = 125
 
 [node name="bolha" type="AnimatedSprite" parent="."]
 visible = false
