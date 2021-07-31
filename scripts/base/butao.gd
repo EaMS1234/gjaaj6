@@ -9,6 +9,9 @@ var clicked = 0  # Vezes clicadas
 
 func _physics_process(delta):
 	if clickable and Input.is_action_just_pressed("ui_accept") and clicked < max_click:
+		get_tree().get_nodes_in_group("__player")[0].get_child(5).stream_paused = false
+		get_tree().get_nodes_in_group("__player")[0].get_child(5).play(0.0)
+		
 		if get_parent().tempo == 1:
 			$botao_sprite.animation = "pressed"
 		

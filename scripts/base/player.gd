@@ -31,10 +31,7 @@ func _physics_process(delta):
 	refresh_time += 1
 	
 	var fase = get_tree().get_nodes_in_group("__fase")[0]
-	
-	if Input.is_action_just_released("toggle_fullscreen"):
-		OS.window_fullscreen = !OS.window_fullscreen
-	
+
 	if movable:
 		if Input.is_action_pressed("ui_down"):
 			mov.y += velo
@@ -104,6 +101,9 @@ func _physics_process(delta):
 			if caixa == true and pegou == false:
 				pegou = true
 				
+				$pegar.stream_paused = false
+				$pegar.play(0.0)
+				
 				if get_parent().tempo == 1:
 					$player_sprite.animation = "c_frente"
 				
@@ -120,6 +120,9 @@ func _physics_process(delta):
 			elif caixa == false and botao == false and pegou == true:
 				if block == false:
 					pegou = false
+					
+					$pegar.stream_paused = false
+					$pegar.play(0.0)
 					
 					$player_sprite.animation = "a_frente"
 					$player_sprite.play()
@@ -166,8 +169,12 @@ func _physics_process(delta):
 	if mov.length() >= velo:
 		# Impede de se mover mais rapido que a velocidade estabelecida
 		mov = mov.normalized() * velo
-	
+		
+		$passos.stream_paused = false
+		
 	if mov.length() == 0:
+		$passos.stream_paused = true
+		
 		$player_sprite.frame = 1
 		$player_sprite.stop()
 	
@@ -177,6 +184,10 @@ func _physics_process(delta):
 		
 		else:
 			$bolha.stop()
+	
+	if $pegar.get_playback_position() >= 1.6:
+		$pegar.stream_paused = true
+		$pegar.play(0.0)
 	
 	if refresh_time <= cooldown:
 		viajable = false
