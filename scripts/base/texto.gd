@@ -5,7 +5,7 @@ export var _txt_velo = 0.025
 func _ready():
 	self.percent_visible = 0
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	self.percent_visible += _txt_velo
 

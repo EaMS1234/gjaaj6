@@ -5,7 +5,7 @@ signal unpress
 
 var ativ = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if ativ:
 		if get_parent().tempo == 1:
 			$pplaca_sprite.animation = "activate"

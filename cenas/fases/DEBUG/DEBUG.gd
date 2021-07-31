@@ -17,7 +17,7 @@ var tempo = 1  # 0 = PASSADO. 1 = PRESENTE. 2 = FUTURO.
 func _ready():
 	$player_area.screen_size = $ReferenceRect.rect_size
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if tempo == 0:
 		$porta_area/porta_col.disabled = true
 		$porta_area.hide()
@@ -25,9 +25,14 @@ func _physics_process(delta):
 		$bg.animation = "pa"
 		$Label.text = "PASSADO"
 		
-		self.add_child(pa)
-		self.remove_child(pre)
-		self.remove_child(fu)
+		if not pa in self.get_children():
+			self.add_child(pa)
+		
+		if pre in self.get_children():
+			self.remove_child(pre)
+		
+		if fu in self.get_children():
+			self.remove_child(fu)
 		
 		if $__TILE.dispo_pa == false:
 			$__TILE.collision_layer = 2
@@ -58,9 +63,14 @@ func _physics_process(delta):
 		$bg.animation = "pre"
 		$Label.text = "PRESENTE"
 		
-		self.remove_child(pa)
-		self.add_child(pre)
-		self.remove_child(fu)
+		if pa in self.get_children():
+			self.remove_child(pa)
+		
+		if not pre in self.get_children():
+			self.add_child(pre)
+		
+		if fu in self.get_children():
+			self.remove_child(fu)
 		
 		if $__TILE.dispo_pre == false:
 			$__TILE.collision_layer = 2
@@ -80,9 +90,14 @@ func _physics_process(delta):
 		$bg.animation = "fu"
 		$Label.text = "FUTURO"
 		
-		self.remove_child(pa)
-		self.remove_child(pre)
-		self.add_child(fu)
+		if pa in self.get_children():
+			self.remove_child(pa)
+		
+		if pre in self.get_children():
+			self.remove_child(pre)
+		
+		if not fu in self.get_children():
+			self.add_child(fu)
 		
 		if $__TILE.dispo_fu == false:
 			$__TILE.collision_layer = 2

@@ -7,7 +7,7 @@ export var max_click = 3  # Quantidade de clicks
 var clickable = false
 var clicked = 0  # Vezes clicadas
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if clickable and Input.is_action_just_pressed("ui_accept") and clicked < max_click:
 		get_tree().get_nodes_in_group("__player")[0].get_child(5).stream_paused = false
 		get_tree().get_nodes_in_group("__player")[0].get_child(5).play(0.0)

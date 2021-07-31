@@ -10,7 +10,7 @@ func _ready():
 	for node in get_tree().get_nodes_in_group("__player"):
 		node.movable = false
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("viagem"):
 		_viagem()
 		

@@ -10,7 +10,7 @@ func _ready():
 	for node in get_tree().get_nodes_in_group("__player"):
 		print(node.get_parent().name)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	self.color = Color(255, 255, 255, x)
 	
 	if $AudioStreamPlayer.get_playback_position() >= 3.3:

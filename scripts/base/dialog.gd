@@ -16,7 +16,7 @@ func _ready():
 	for node in get_tree().get_nodes_in_group("__player"):
 		node.movable = false  # Bloqueia as açoes do jogador
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if x >= len(lines):		
 		for node in get_tree().get_nodes_in_group("__player"):
 			node.movable = true  # Libera as açoes do jogador

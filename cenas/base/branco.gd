@@ -9,7 +9,7 @@ var rep = 0
 func _ready():
 	$AudioStreamPlayer2D.play()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	self.color = Color(255, 255, 255, x)
 	
 	if etapa == 0:

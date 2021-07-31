@@ -19,6 +19,7 @@ var intro_text = [
 ]
 
 var fase_num = -1
+var __start = false
 var x = 0
 
 func _ready():
@@ -29,17 +30,20 @@ func _ready():
 	$text1.text = intro_text[0]
 	$text1.visible = true
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("toggle_fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 	
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and __start == false:
 		if len(intro_text) > x:
 			x += len(intro_text)
 		
 		else:
 			$musica.fade = true
-			add_child(trans)
+			
+			if not trans in get_children():
+				add_child(trans)
+				__start = true
 
 func _on_timer_texto_timeout():
 	x += 1

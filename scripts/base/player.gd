@@ -24,7 +24,7 @@ var movable = true  # Jogador e movimentavel?]
 var block = false
 var viajable_motivo = "Você não pode fazer isto agora."
 
-func _integrate_forces(state):
+func _integrate_forces(_state):
 	set_scale(Vector2(0.75, 0.75))
 
 func _physics_process(delta):
