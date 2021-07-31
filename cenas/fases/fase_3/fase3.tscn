@@ -116,10 +116,10 @@ autoplay = true
 stream_paused = true
 
 [node name="caixa_area" parent="." instance=ExtResource( 2 )]
-position = Vector2( 192, 281.6 )
+position = Vector2( 344, 304 )
 
 [node name="pplaca_area" parent="." instance=ExtResource( 3 )]
-position = Vector2( 832, 281.6 )
+position = Vector2( 664, 296 )
 
 [connection signal="area_entered" from="porta_area" to="." method="_on_porta_area_area_entered"]
 [connection signal="press" from="pplaca_area" to="." method="_on_pplaca_area_press"]
