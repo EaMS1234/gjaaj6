@@ -4,6 +4,7 @@ var trans = preload("res://cenas/base/preto.tscn").instance()
 
 var fases = [
 	preload("res://cenas/fases/fase_1/fase1.tscn"),
+	preload("res://cenas/fases/fase_2/fase2.tscn"),
 	preload("res://cenas/fases/DEBUG/DEBUG.tscn")
 ]  # Conjunto das fases (EM ORDEM)
 
