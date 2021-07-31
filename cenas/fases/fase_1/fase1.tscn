@@ -1,0 +1,121 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://cenas/fases/fase_1/fase1.gd" type="Script" id=1]
+[ext_resource path="res://cenas/base/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/salaprincipal.png" type="Texture" id=6]
+[ext_resource path="res://assets/graphics/Viagem no tempo/salaprincipalfu.png" type="Texture" id=7]
+[ext_resource path="res://assets/graphics/Viagem no tempo/SALAPRINCIPALPASSADO.png" type="Texture" id=9]
+[ext_resource path="res://assets/graphics/tile_presente.tres" type="TileSet" id=10]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta8.png" type="Texture" id=11]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta5.png" type="Texture" id=12]
+[ext_resource path="res://cenas/fases/DEBUG/__TILE.gd" type="Script" id=13]
+[ext_resource path="res://cenas/base/butao.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta3.png" type="Texture" id=15]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta9.png" type="Texture" id=17]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta2.png" type="Texture" id=18]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta7.png" type="Texture" id=19]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta1.png" type="Texture" id=20]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta6.png" type="Texture" id=21]
+[ext_resource path="res://assets/Audio/portaabrindo.mp3" type="AudioStream" id=22]
+[ext_resource path="res://assets/graphics/SALAPRINCIPAL/Porta4.png" type="Texture" id=23]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.0
+rough = true
+absorbent = true
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "pa",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "pre",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "fu",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 20 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 23 ), ExtResource( 12 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 11 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[node name="fase_1" type="Node2D" groups=[
+"__sala",
+]]
+script = ExtResource( 1 )
+
+[node name="player_area" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512.078, 512 )
+physics_material_override = SubResource( 1 )
+viajable = false
+
+[node name="bg" type="AnimatedSprite" parent="."]
+position = Vector2( 514.375, 302.133 )
+scale = Vector2( 0.397409, 0.407823 )
+z_index = -5
+frames = SubResource( 2 )
+animation = "pre"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="." groups=[
+"__col",
+]]
+margin_left = 112.0
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 576.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="__TILE" type="TileMap" parent="."]
+scale = Vector2( 0.75, 0.75 )
+z_index = -1
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 80, 80 )
+format = 1
+script = ExtResource( 13 )
+dispo_fu = true
+
+[node name="blocked_area" type="Area2D" parent="." groups=[
+"__block",
+]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="blocked_area"]
+
+[node name="porta_area" type="Area2D" parent="." groups=[
+"__porta",
+]]
+position = Vector2( 512.078, 42.7153 )
+
+[node name="porta_sprite" type="AnimatedSprite" parent="porta_area"]
+position = Vector2( 1.53027, -3.60719 )
+scale = Vector2( 0.397, 0.408 )
+z_index = -4
+frames = SubResource( 3 )
+
+[node name="porta_col" type="CollisionPolygon2D" parent="porta_area"]
+polygon = PoolVector2Array( -64.0778, 13.2847, -72.0778, -10.7153, -0.0777588, -18.7153, 71.9222, -10.7153, 63.9222, 13.2847, 47.9222, 29.2847, -48.0778, 29.2847 )
+disabled = true
+
+[node name="porta_audio" type="AudioStreamPlayer2D" parent="porta_area"]
+stream = ExtResource( 22 )
+autoplay = true
+stream_paused = true
+
+[node name="botao_area" parent="." instance=ExtResource( 14 )]
+position = Vector2( 512.078, 224 )
+max_click = 1
+
+[connection signal="area_entered" from="porta_area" to="." method="_on_porta_area_area_entered"]
+[connection signal="click" from="botao_area" to="." method="_on_botao_area_click"]
