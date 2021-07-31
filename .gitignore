@@ -12,3 +12,4 @@ exports/linux.x86_64
 exports/title.zip
 exports/windows.exe
 exports/windows.pck
+*.zip
