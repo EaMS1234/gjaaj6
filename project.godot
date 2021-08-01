@@ -15,6 +15,8 @@ config/description="Jogo feito para a GAME JAAJ 6, de tema CICLOS.
 
 Assuma o controle de uma cobaia robótica em 8 fases com mecânicas de viagens, paradoxos e loops temporais na misteriosa empresa PA PRE FU!"
 run/main_scene="res://cenas/init.tscn"
+boot_splash/image="res://assets/boot.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://assets/icon.png"
 
 [display]
