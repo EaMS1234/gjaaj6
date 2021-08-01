@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://cenas/fases/fase_4/fase4.gd" type="Script" id=1]
-[ext_resource path="res://cenas/base/butao.tscn" type="PackedScene" id=2]
+[ext_resource path="res://cenas/fases/fase_5/fase5.gd" type="Script" id=1]
+[ext_resource path="res://cenas/base/pplaca.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cenas/base/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/graphics/SALAPRINCIPAL/salaprincipal.png" type="Texture" id=6]
 [ext_resource path="res://assets/graphics/Viagem no tempo/salaprincipalfu.png" type="Texture" id=7]
@@ -50,7 +50,7 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[node name="fase_1" type="Node2D" groups=[
+[node name="fase_5" type="Node2D" groups=[
 "__sala",
 ]]
 script = ExtResource( 1 )
@@ -83,15 +83,16 @@ z_index = -1
 tile_set = ExtResource( 10 )
 cell_size = Vector2( 80, 80 )
 format = 1
-tile_data = PoolIntArray( -65533, -1610612733, 0, -65523, -1610612733, 0, 3, -1610612733, 0, 13, -1610612733, 0, 65539, -1610612733, 0, 65549, -1610612733, 0, 131075, -1610612733, 0, 131085, -1610612733, 0, 196611, 1610612738, 0, 196612, 1610612739, 0, 196613, 1610612739, 0, 196614, 1610612739, 0, 196615, 1610612739, 0, 196616, 1610612739, 0, 196617, 1610612739, 0, 196618, 1610612739, 0, 196619, 1610612739, 0, 196620, 1610612739, 0, 196621, -1610612734, 0 )
+tile_data = PoolIntArray( 262143, 1610612739, 0, 196608, 1610612739, 0, 196609, 1610612739, 0, 196610, 1610612739, 0, 196611, 2, 0, 262147, -1073741821, 0, 327683, -1073741821, 0, 458751, 1610612739, 0, 393216, 1610612739, 0, 393217, 1610612739, 0, 393218, 1610612739, 0, 393219, -1610612734, 0 )
 script = ExtResource( 13 )
+dispo_fu = true
 
 [node name="blocked_area" type="Area2D" parent="." groups=[
 "__block",
 ]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="blocked_area"]
-polygon = PoolVector2Array( 192, -16, 192, 232, 832, 232, 832, -8, 792, -8, 792, 192, 232, 192, 232, -16 )
+polygon = PoolVector2Array( -32, 192, 232, 192, 232, 408, -64, 408, -64, 368, -40, 376, 192, 376, 192, 232, -32, 232 )
 
 [node name="porta_area" type="Area2D" parent="." groups=[
 "__porta",
@@ -113,9 +114,8 @@ stream = ExtResource( 22 )
 autoplay = true
 stream_paused = true
 
-[node name="botao_area" parent="." instance=ExtResource( 2 )]
-position = Vector2( 512.078, 136 )
-max_click = 1
+[node name="pplaca_area" parent="." instance=ExtResource( 2 )]
+position = Vector2( 142, 304 )
 
 [connection signal="area_entered" from="porta_area" to="." method="_on_porta_area_area_entered"]
-[connection signal="click" from="botao_area" to="." method="_on_botao_area_click"]
+[connection signal="press" from="pplaca_area" to="." method="_on_pplaca_area_press"]

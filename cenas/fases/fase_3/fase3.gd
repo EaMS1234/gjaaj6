@@ -11,6 +11,7 @@ var tile_viaj = load("res://assets/graphics/tile_viagem.tres")
 var tempo = 1  # 0 = PASSADO. 1 = PRESENTE. 2 = FUTURO.
 
 var gat = false
+var rep = 0
 
 func _ready():
 	$player_area.screen_size = $ReferenceRect.rect_size
@@ -57,13 +58,16 @@ func _on_porta_area_area_entered(area):
 		get_parent().get_parent().add_child(trans)
 
 func _on_pplaca_area_press():
-	var dia = txt.instance()
-	
-	dia.txt_pos = "3.1"
-	
-	add_child(dia)
-	
-	$porta_area/porta_audio.stream_paused = false
-	$porta_area/porta_sprite.play()
-	
-	gat = true
+	if rep == 0:
+		var dia = txt.instance()
+		
+		dia.txt_pos = "3.1"
+		
+		add_child(dia)
+		
+		$porta_area/porta_audio.stream_paused = false
+		$porta_area/porta_sprite.play()
+		
+		gat = true
+		
+		rep += 1
