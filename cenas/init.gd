@@ -3,7 +3,9 @@ extends Node
 var trans = preload("res://cenas/base/preto.tscn").instance()
 
 var fases = [
-	preload("res://cenas/fases/DEBUG/DEBUG.tscn")
+
+	preload("res://cenas/fases/fase_8/fase8.tscn"),
+	preload("res://cenas/fases/fim/fim.tscn")
 ]  # Conjunto das fases (EM ORDEM)
 
 var intro_text = [
@@ -11,10 +13,10 @@ var intro_text = [
 	"Erick Augusto AKA. EaMS1234\ne\nLucas Morosini AKA. zLuckzz\napresentam...",
 	"Um jogo para a GAME JAAJ 6",
 	"Um jogo para a GAME JAAJ 6\nTEMA: CICLOS",
-	"Gameplay e Programaçao por",
-	"Gameplay e Programaçao por\n\nEaMS1234",
-	"Graficos, Sons e Musicas por",
-	"Graficos, Sons e Musicas por\n\nzLuckzz",
+	"Gameplay e Programação por",
+	"Gameplay e Programação por\n\nEaMS1234",
+	"Gráficos, Sons e Músicas por",
+	"Gráficos, Sons e Músicas por\n\nzLuckzz",
 	""
 ]
 

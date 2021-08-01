@@ -17,3 +17,90 @@ debug.debug; 1234567890123456789012345678901234567890123456789012345678901234567
 0.2; Mensagem N1: Seja bem vindo ao jogo.
 0.2; Mensagem N2: Este sistema de diálogos funciona de forma automática, reconhecendo o texto salvo neste arquivo.
 0.2; Mensagem N3: Bons roteiros ;)
+
+1.0; Olá Cobaia Nº5392.
+1.0; Seja Bem-Vinda à central de experimentos científicos da Laboratórios PA PRE FU™ Ltda. Ou C.E.C.D.L.P.P.F., caso prefira.
+1.0; Você foi criada com a única finalidade de testar tecnologias de viagem no tempo desenvolvidas por nós da PA PRE FU™. Outros como você já passaram por aqui, e outros ainda poderão vir, dependendo de seu desempenho.
+1.0; No meio deste percurso por nós elaborado, você poderá andar com as SETAS do TECLADO e interagir com objetos através de ESPAÇO ou ENTER.
+1.0; Caso prefira: você pode ligar ou desligar a TELA CHEIA através de F11.
+1.0; Para esta primeira experiência, você aprenderá sobre a importância de botões para o percurso.
+1.0; Pressione o botão para ir ao próximo nível.
+
+1.1; Excelente! Neste exato ponto, você já está entre as 1000 cobaias mais inteligentes criadas!
+1.1; Botões são a mais pura e básica forma de interação. Dominá-los é essencial para seu desempenho pelo percurso.
+1.1; Prossiga para a saída para ir ao próximo nível.
+
+2.0; Olá novamente, cobaia Nº5392.
+2.0; Como deve perceber, esta sala é idêntica à anterior - se não fosse por um mísero detalhe:
+2.0; O botão está inacessível.
+2.0; Por favor, aguarde.
+
+2.1; Caso tenha ficado confuso, por favor, relaxe.
+2.1; Desde o começo da construção dessas instalações e da primeira cobaia, já sabíamos que a viagem no tempo era possível.
+2.1; Há 20 anos, quando iniciamos o programa, já havíamos sido visitados por uma cobaia do futuro, sabendo que o experimento havia obtido sucesso.
+2.1; Interações como esta são esperadas ao longo do percurso.
+2.1; Por favor, caso esteja em pâncio, ligue para o nosso serviço de atendimento em +55 (87) 52618-3958 de Segunda a Sábado.
+
+3.0; Para este próximo nível, você aprenderá sobre caixas e placas de pressão.
+3.0; Você consegue pegar ou largar uma caixa pressionando ESPAÇO ou ENTER.
+3.0; Placas de pressão serão ativadas quando uma caixa estiver sobre elas.
+3.0; Ative a esta placa de pressão para abrir a porta.
+
+3.1; "Relatório de Cobaia Nº5392, Experimento Nº3: ...
+3.1; ... Desempenho suficiente."
+3.1; Por favor prossiga para o próximo nível.
+
+4.0; Você tem se saído muito bem até agora.
+4.0; Finalmente chegamos à tão esperada hora...
+4.0; Em seu chassi foi instalado um dispositivo de lapso temporal,
+4.0; Você pode ativá-lo pressionando SHIFT e selecionando seu destino.
+4.0; Lembre-se de que a conexão é instável. Logo, você pode experienciar efeitos colaterais da viagem no tempo em sua visão - caso esteja em outra linha temporal.
+
+4.1; Muito bem! Isso parece ser tão natural para você.
+4.1; Apenas 98 cobaias chegaram até este ponto. A maioria têm algum defeito antes ou congela devido à incompetência dos nossos programadores mal-pagos em criar uma I.A. capaz de
+4.1; compreender Paradoxos e/ou Loops temporais.
+4.1; Por favor, prossiga para o próximo nível.
+
+5.0; Para impedir um Paradoxo temporal ou imprevistos que possam afetar o seu desempenho, você precisa saber de algumas informações:
+5.0; Caixas movidas no Passado também permanecerão no mesmo ponto até o Presente e o Futuro chegarem.
+5.0; Isso também incluí caixas trazidas do Futuro para o Presente.
+5.0; E por fim:
+5.0; Como dois objetos não podem ocupar o mesmo espaço ao mesmo tempo, você não poderá viajar no tempo caso haja um cano...
+5.0; ...quer dizer...
+5.0; ...uma parede.
+5.0; Boa sorte, Cobaia Nº5392.
+
+5.1; Muito Bem!
+5.1; Viagem temporal é um tema complexo para a mente de muitos.
+5.1; Espero que tenha compreendido como ela funciona, pois precisará dela nos próximos níveis.
+
+6.0; Apesar de termos sido visitados por uma cobaia do Futuro, muitos dos nossos engenheiros ainda duvidavam do sucesso do projeto.
+6.0; Eles diziam que a suposta cobaia do Futuro na verdade veio de outra dimensão.
+6.0; Como as cobaias não falam, só saberemos quando esse futuro chegar e pudermos finalmente fazer estes experimentos em seres vivos.
+6.0; Você é a primeira cobaia a chegar tão longe, então o orçamento não cobriu totalmente os custos dos próximos níveis.
+6.0; Caso note qualquer problema na estrutura da sala, por favor fale com o Bob. É ele quem cuida do financeiro desse lugar.
+
+6.1; Excelente! Já estamos nos aproximando do final.
+6.1; Prossiga para o próximo nível.
+
+7.0; Neste próximo experimento você deverá superar um labirinto.
+7.0; Não podemos ter nem Minotauros nem lindas jovens a serem resgatadas, mas garanto nosso Labirinto pode pelo menos ser interessante.
+7.0; Estaremos te observando, Cobaia Nº5392.
+
+7.1; Excelente!
+7.1; Você certamente dominou a viagem no tempo, e consegue usá-la a seu favor!
+7.1; Mas você consegue chegar à saída?
+
+8.0; Certo...
+8.0; Até agora tudo correu bem, mas ainda há uma variável na linha temporal que não foi resolvida.
+8.0; Você já deve ter notado, mas este nível não possui saída e nós desativamos seu dispositivo de lapso temporal.
+8.0; Por favor, pressione o botão para prosseguirmos.
+
+8.1; "Relatório de Cobaia Nº5392, Experimentos de viagem temporal:...
+8.1; ...Primeira cobaia a completar o percurso...
+8.1; ...Paradeiro: desconhecido, (possivelmente em outra linha temporal)...
+8.1; ...Objetivos primários: alcançados...
+8.1; ...Risco de rompimento do espaço tempo: nominal...
+8.1; ...Ciclo temporal: fechado...
+8.1; ...Notas: Parabéns! Obrigado por jogar PA PRE FU!"
+

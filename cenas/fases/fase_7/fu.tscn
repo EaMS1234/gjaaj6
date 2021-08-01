@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/Audio/ambienciafuturo.mp3" type="AudioStream" id=2]
+
+[node name="fu" type="Node2D" groups=[
+"__fase",
+]]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -7.0
+autoplay = true

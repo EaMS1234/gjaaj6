@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://cenas/base/caixa.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Audio/ambienciafuturo.mp3" type="AudioStream" id=2]
+
+[node name="fu" type="Node2D" groups=[
+"__fase",
+]]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -7.0
+autoplay = true
+
+[node name="caixa_area" parent="." instance=ExtResource( 1 )]
+position = Vector2( 768, 312 )
+default_time = 2

@@ -9,6 +9,7 @@ const unable = preload("res://cenas/base/msg_erro.tscn")
 export var velo = 150  # Velocidade (pixel/sec)
 export var cooldown = 50
 export var viajable = true
+export var cooldown_enable = true
 
 var refresh_time = 0
 var screen_size
@@ -146,9 +147,11 @@ func _physics_process(delta):
 								node.position = __nova_caixa.position
 					
 					elif get_parent().tempo == 1:
-						for node in get_parent().fu.get_children():
-							if node.name == ready_caixa_nome:
-								node.position = __nova_caixa.position
+						for item in get_parent().get_children():
+							if item.name == "fu":
+								for node in get_parent().fu.get_children():
+									if node.name == ready_caixa_nome:
+										node.position = __nova_caixa.position
 				
 				else:
 					erro(viajable_motivo)
@@ -192,7 +195,7 @@ func _physics_process(delta):
 	if refresh_time <= cooldown:
 		viajable = false
 	
-	else:
+	elif cooldown_enable == true:
 		viajable = true
 	
 	position.x = clamp(position.x, 112, screen_size.x)
