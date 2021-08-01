@@ -60,6 +60,18 @@ func _physics_process(_delta):
 		
 		if gat:
 			$porta_area/porta_col.disabled = false
+			
+			if rep == 1:
+				$player_area.movable = false
+				
+				var dia = txt.instance()
+		
+				dia.txt_pos = "5.1"
+				
+				add_child(dia)
+				
+				rep += 1
+		
 
 		$porta_area.show()
 		
@@ -130,12 +142,6 @@ func _on_porta_area_area_entered(area):
 
 func _on_pplaca_area_press():
 	if rep == 0:
-		var dia = txt.instance()
-		
-		dia.txt_pos = "5.1"
-		
-		add_child(dia)
-		
 		$porta_area/porta_audio.stream_paused = false
 		$porta_area/porta_sprite.play()
 		
