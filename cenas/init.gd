@@ -3,7 +3,13 @@ extends Node
 var trans = preload("res://cenas/base/preto.tscn").instance()
 
 var fases = [
-
+	preload("res://cenas/fases/fase_1/fase1.tscn"),
+	preload("res://cenas/fases/fase_2/fase2.tscn"),
+	preload("res://cenas/fases/fase_3/fase3.tscn"),
+	preload("res://cenas/fases/fase_4/fase4.tscn"),
+	preload("res://cenas/fases/fase_5/fase5.tscn"),
+	preload("res://cenas/fases/fase_6/fase6.tscn"),
+	preload("res://cenas/fases/fase_7/fase7.tscn"),
 	preload("res://cenas/fases/fase_8/fase8.tscn"),
 	preload("res://cenas/fases/fim/fim.tscn")
 ]  # Conjunto das fases (EM ORDEM)
