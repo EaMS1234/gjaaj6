@@ -114,7 +114,7 @@ autoplay = true
 stream_paused = true
 
 [node name="botao_area" parent="." instance=ExtResource( 2 )]
-position = Vector2( 512.078, 136 )
+position = Vector2( 280, 128 )
 max_click = 1
 
 [connection signal="area_entered" from="porta_area" to="." method="_on_porta_area_area_entered"]
