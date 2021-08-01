@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://cenas/base/caixa.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Audio/ambienciapassado.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/Audio/musicasdopassado.mp3" type="AudioStream" id=3]
+
+[node name="pa" type="Node2D" groups=[
+"__fase",
+]]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -5.0
+autoplay = true
+
+[node name="caixa_area" parent="." instance=ExtResource( 1 )]
+position = Vector2( 336, 296 )
+default_time = 0
