@@ -26,14 +26,14 @@ absorbent = true
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "pa",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "pre",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "pa",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
