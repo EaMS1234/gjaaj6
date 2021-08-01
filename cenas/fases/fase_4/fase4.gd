@@ -3,9 +3,9 @@ extends Node2D
 # Carrega o dialogo
 const txt = preload("res://cenas/base/dialog.tscn")
 
-var pa = preload("res://cenas/fases/fase_4/pa.tscn").instance()
-var pre = preload("res://cenas/fases/fase_4/pre.tscn").instance()
-var fu = preload("res://cenas/fases/fase_4/fu.tscn").instance()
+var pa = preload("res://cenas/fases/fase_7/pa.tscn").instance()
+var pre = preload("res://cenas/fases/fase_7/pre.tscn").instance()
+var fu = preload("res://cenas/fases/fase_7/fu.tscn").instance()
 
 var tile_norm = load("res://assets/graphics/tile_presente.tres")
 var tile_viaj = load("res://assets/graphics/tile_viagem.tres")
@@ -139,6 +139,6 @@ func _on_porta_area_area_entered(area):
 func _on_botao_area_click():
 	var dia = txt.instance()
 	
-	dia.txt_pos = "4.1"
+	dia.txt_pos = "7.1"
 	
 	add_child(dia)
