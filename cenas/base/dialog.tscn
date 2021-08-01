@@ -4,7 +4,9 @@
 [ext_resource path="res://scripts/base/dialog.gd" type="Script" id=2]
 [ext_resource path="res://scripts/base/texto.gd" type="Script" id=3]
 
-[node name="dialog_bg" type="Polygon2D"]
+[node name="dialog_bg" type="Polygon2D" groups=[
+"__TEXTOO",
+]]
 position = Vector2( 136, 568 )
 z_index = 2
 color = Color( 0, 0, 0, 0.498039 )
