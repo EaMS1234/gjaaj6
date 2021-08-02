@@ -139,6 +139,6 @@ func _on_porta_area_area_entered(area):
 func _on_botao_area_click():
 	var dia = txt.instance()
 	
-	dia.txt_pos = "7.1"
+	dia.txt_pos = "4.1"
 	
 	add_child(dia)
