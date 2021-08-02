@@ -85,9 +85,7 @@ func _physics_process(_delta):
 		
 	if brc in self.get_children():
 		if brc.visible == false:
-			for node in get_children():
-				if node.name == "player_clone":
-					$player_clone.queue_free()
+			$player_clone.visible = false
 			a += 1
 
 func _on_porta_area_area_entered(area):
