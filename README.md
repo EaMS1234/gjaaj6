@@ -4,6 +4,6 @@
 
 Jogo feito para a GAMEJAAJ 6, de tema CICLOS.
 
-## DISCLAIMER
+## Disclaimer
 
-NÃO PRETENDO ATUALIZAR O JOGO NEM MANTÊ-LO. TODO O CÓDIGO NESTE REPOSITÓRIO NUNCA SERÁ CORRIGIDO OU ATUALIZADO OU MELHORADO.
+Não pretendo atualizar o jogo nem mantê-lo.
