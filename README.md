@@ -2,7 +2,7 @@
 
 ## PAPREFU
 
-Jogo feito para a GAMEJAAJ 6, de tema CICLOS.
+Jogo feito para a [GameJaaj 6](https://itch.io/jam/game-jaaj-6), de tema CICLOS.
 
 ## Disclaimer
 
